@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compte-rendu de TP1</title>
+  </head>
+  <body>
+    <h1>Compte-rendu de TP1</h1>
+      <p>
+        Yacine
+      </p>
+    <h2>Exercice 0 : On sort un papier et un crayon</h2>
+      <p>
+        Voilà, c'est fait !
+      </p>
+    <h2>Exercice 1 : On commence tranquillement !</h2>
+      <p>
+        Voici l'historique des commande effectué pour faire les questions 1), 2), 3)
+        <pre>
+          yacine.hamadouche@pcader104-17:~/Bureau$ cd ../
+          yacine.hamadouche@pcader104-17:~$ mkdir progweb
+          yacine.hamadouche@pcader104-17:~$ cd progweb/
+          yacine.hamadouche@pcader104-17:~/progweb$ mkdir tp1
+          yacine.hamadouche@pcader104-17:~/progweb$ cd tp1/
+          yacine.hamadouche@pcader104-17:~/progweb/tp1$ gedit compte-rendu-tp1.html &amp;
+        </pre>
+      </p>
+    <h2>Exercice 2&nbsp;: Document HTML de base</h2>
+      <h3>
+        1) Si le résultat ne s'affiche pas correctement (entre autres l'accent de "À quoi sert le tag p ?"), que manque-t-il comme information à la balise head pour que le fichier s'affiche correctement ?
+      </h3>
+      <p>
+        Le résultat s'affiche correctement mais si ce n'était pas le cas il aurait fallu spécifier l'encodage utilisé pour cette page HTML comme ceci : <br>
+        <i>
+          &lt;meta charset="utf-8".&gt;
+        </i>
+      </p>
+      <h3>
+        2) À quoi servent les tags h1, h2 et h3 ?
+      </h3>
+      <p>
+        Les tags h1, h2 et h3 permettent de hiéarchiser les titres dans le code HTML plus le chiffre après <i> h </i> est petit plus le titre est important et sera imposant visuellement.
+      </p>
+      <h3>
+        3) À quoi sert le tag p ?
+      </h3>
+      <p>
+        Le tag p représente un paragraphe dans le code, elle permet de séparer visuellement les différents textes en <i> "bloc". </i> 
+      </p>
+    <h2>Exercice 3 : Uniform Resource Locator </h2>
+      <h3>
+        1) Quel est le nom de la machine à laquelle vous accédez ? <br>
+        Quel est le nom de domaine auquel vous accédez ?
+      </h3>
+      <p>
+        Le nom de la machine à laquelle on accède est : www (World Wide Web) <br>
+        Le nom de domaine auquel on accède est w3.org et est trouvable directment en observant la barre d'adresse.
+      </p>
+      <h3>
+        2) À quoi correspond la première ligne de la réponse ? <br>
+        À quoi correspond la deuxième ligne de la réponse ?
+      </h3>
+      <p>
+        <pre>
+          yacine.hamadouche@pcader104-17:~$ host w3.org
+          w3.org has address 104.18.23.19
+          w3.org has address 104.18.22.19
+          w3.org has IPv6 address 2606:4700::6812:1613
+          w3.org has IPv6 address 2606:4700::6812:1713
+          w3.org mail is handled by 10 mimas.w3.org.
+          w3.org mail is handled by 10 titan.w3.org.
+          w3.org mail is handled by 50 bart.w3.org.
+          </pre>
+        La première ligne de la réponse de la commande <i> host w3.org </i> correspond à l'adresse IP de la machine à laquelle on accède grâce au DNS. <br>
+        La deuxième ligne de la réponse correspond à cette fois-ci à l'adresse IPV6 <br>
+        La troisième ligne de la réponse correspond aux machines qui gère les mails de ce nom de domaine
+      </p>
+      <h3>
+        3) Remplacez le nom de la machine par son adresse IP pour vérifier que cela fonctionne toujours. <br>
+        Si ça ne marche pas, que se passe-t-il ? Essayez avec google.fr. <br>
+        À votre avis, pourquoi utilise-t-on des noms pour les machines plutôt que des adresses IP ? <br>
+      </h3>
+      <p>
+        Error 1003 : Direct IP access not allowed. <br>
+        You've requested an IP address that is part of the Cloudflare network. A valid Host header must be supplied to reach the desired website. <br>
+        Cloudfare, l'hébergeur du site web nous empêche d'accéder au site directment en entrant l'adresse IP dans la barre de recherche. <br>  
+        Néanmoins en entrant 216.58.214.163 qui est l'adresse IP de Google.fr on arrive bien sur la page sans aucun erreur nous interrompant. 
+      </p>
+      <h3>
+        4) Exécutez la commande traceroute sur cette adresse IP. <br>
+        Qu'affiche cette commande ? <br>
+        Comment s'appelle le réseau sur lequel est connectée l'université (ou votre domicile) ? <br>
+        Quels sont les autres réseaux qui sont traversés ? <br>
+      </h3>
+      <p>
+        <pre>
+          yacine.hamadouche@pcader104-17:~$ traceroute 104.18.23.19
+          traceroute to 104.18.23.19 (104.18.23.19), 30 hops max, 60 byte packets
+           1  gwetud.u-pem.fr (10.2.0.1)  0.177 ms  0.191 ms  0.166 ms
+           2  195.220.83.114 (195.220.83.114)  0.345 ms  0.360 ms  0.394 ms
+           3  193.55.200.168 (193.55.200.168)  1.228 ms  1.127 ms  1.102 ms
+           4  te0-1-0-3-ren-nr-creteil-rtr-091.noc.renater.fr (193.51.177.96)  1.263 ms  1.180 ms  1.580 ms
+           5  xe-0-1-23-ren-nr-paris1-rtr-131.noc.renater.fr (193.55.204.98)  3.585 ms  3.634 ms  3.804 ms
+           6  renater-ias-geant-gw.par.fr.geant.net (83.97.89.9)  1.380 ms  1.248 ms  1.315 ms
+           7  ae8.mx1.lon2.uk.geant.net (62.40.98.106)  8.833 ms  9.327 ms  8.004 ms
+           8  ae2.mx1.lon.uk.geant.net (62.40.98.64)  8.639 ms  8.635 ms  8.568 ms
+           9  * * *
+          10  172.70.94.2 (172.70.94.2)  8.864 ms 172.70.87.2 (172.70.87.2)  17.411 ms  16.584 ms
+          11  104.18.23.19 (104.18.23.19)  8.833 ms  8.893 ms  8.384 ms
+        </pre>
+      La commande traceroute permet de visualiser par où sont passés nos données et par conséquent de connaître la table de routage <br>
+      Le réseau sur lequel est connécté l'université s'appelle gwetud.u-pem.fr <br>
+      Les autres réseaux traversés par les données sont : 
+        <ol>
+          <li> 195.220.83.114 </li>
+          <li> 93.55.200.168 </li>
+          <li> te0-1-0-3-ren-nr-creteil-rtr-091.noc.renater.fr </li>
+          <li> xe-0-1-23-ren-nr-paris1-rtr-131.noc.renater.fr </li>
+          <li> renater-ias-geant-gw.par.fr.geant.net </li>
+          <li> ae8.mx1.lon2.uk.geant.net </li>
+          <li> ae2.mx1.lon.uk.geant.net </li>
+          <li> 172.70.94.2 </li>
+          <li> 104.18.23.19 </li>
+        </ol>
+      </p>
+      <h3>
+        5) Utiliser la commande host pour récupérer l'adresse IP correspondant à cette machine <br> 
+        http://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/index.html#/.
+      </h3>
+      <p>
+        <pre>
+          yacine.hamadouche@pcader104-17:~$ host monge.univ-mlv.fr
+          monge.univ-mlv.fr has address 193.55.61.150
+          monge.univ-mlv.fr mail is handled by 10 monge.univ-mlv.fr.
+        </pre>
+        L'adresse IP correspondant est : 193.55.61.150
+      </p>
+      <h3>
+        6) Utiliser la commande host pour récupérer l'adresse IP correspondant à cette machine <br>
+        https://vincentjuge1987.github.io/. <br>
+        Lancer la commande host pour récupérer l'adresse IP correspondant à cette machine <br> 
+        https://forax.github.io/course/progweb/. <br>
+        Qu'observe-t-on ? <br>
+        Que se passe-t-il si on essaye d'accéder à cette page dans le navigateur en remplaçant le nom de la machine par l'adresse IP trouvée précédemment ? <br>
+        Et si on remplaçait forax.github.io par vincentjuge1987.github.io au début de l'URL ? Expliquer pourquoi.
+      </h3>
+      <p>
+        <pre>
+          yacine.hamadouche@pcader104-17:~$ host vincentjuge1987.github.io
+          vincentjuge1987.github.io has address 185.199.108.153
+          vincentjuge1987.github.io has address 185.199.110.153
+          vincentjuge1987.github.io has address 185.199.109.153
+          vincentjuge1987.github.io has address 185.199.111.153
+          vincentjuge1987.github.io has IPv6 address 2606:50c0:8001::153
+          vincentjuge1987.github.io has IPv6 address 2606:50c0:8000::153
+          vincentjuge1987.github.io has IPv6 address 2606:50c0:8003::153
+          vincentjuge1987.github.io has IPv6 address 2606:50c0:8002:
+        </pre>
+        Les adresses IP correspondant à vincentjuge1987.github.io sont :  185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 <br>
+        <pre>
+          yacine.hamadouche@pcader104-17:~$ host forax.github.io
+          forax.github.io has address 185.199.111.153
+          forax.github.io has address 185.199.108.153
+          forax.github.io has address 185.199.110.153
+          forax.github.io has address 185.199.109.153
+          forax.github.io has IPv6 address 2606:50c0:8002::153
+          forax.github.io has IPv6 address 2606:50c0:8003::153
+          forax.github.io has IPv6 address 2606:50c0:8000::153
+          forax.github.io has IPv6 address 2606:50c0:8001::153
+        </pre>
+        Les adresses IP correspondant à vforax.github.io sont :  185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 <br>
+        Ce sont les même IP pour les deux pages car tout deux sont hébergés dans les serveurs de GitHub <br>
+        Si on essaie d'accéder au site via l'adresse IP trouvé précédemment on se retrouve bloqué par une page erreur 404 indiquant que la page GitHub n'existe pas <br>
+        Si on essaie de remplacer forax.github.io par vincentjuge1987.github.io dans l'url https://forax.github.io/course/progweb/ on se retrouve aussi devant une page 404 indiquanr 
+      </p>
+  </body>
+</html>
+
