@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Compte-rendu de TP1</title>
+    <meta charset="utf-8">
+    <title> Compte-rendu de TP1 </title>
   </head>
   <body>
-    <h1>Compte-rendu de TP1</h1>
+    <h1>
+      Compte-rendu de TP1
+    </h1>
       <p>
         Yacine
       </p>
-    <h2>Exercice 0 : On sort un papier et un crayon</h2>
+    <h2>
+      Exercice 0 : On sort un papier et un crayon
+    </h2>
       <p>
         Voilà, c'est fait !
       </p>
-    <h2>Exercice 1 : On commence tranquillement !</h2>
+    <h2>
+      Exercice 1 : On commence tranquillement !
+    </h2>
       <p>
         Voici l'historique des commande effectué pour faire les questions 1), 2), 3)
         <pre>
@@ -24,21 +31,23 @@
           yacine.hamadouche@pcader104-17:~/progweb/tp1$ gedit compte-rendu-tp1.html &amp;
         </pre>
       </p>
-    <h2>Exercice 2&nbsp;: Document HTML de base</h2>
+    <h2>
+      Exercice 2&nbsp;: Document HTML de base
+    </h2>
       <h3>
         1) Si le résultat ne s'affiche pas correctement (entre autres l'accent de "À quoi sert le tag p ?"), que manque-t-il comme information à la balise head pour que le fichier s'affiche correctement ?
       </h3>
       <p>
         Le résultat s'affiche correctement mais si ce n'était pas le cas il aurait fallu spécifier l'encodage utilisé pour cette page HTML comme ceci : <br>
-        <i>
+        <code>
           &lt;meta charset="utf-8".&gt;
-        </i>
+        </code>
       </p>
       <h3>
         2) À quoi servent les tags h1, h2 et h3 ?
       </h3>
       <p>
-        Les tags h1, h2 et h3 permettent de hiéarchiser les titres dans le code HTML plus le chiffre après <i> h </i> est petit plus le titre est important et sera imposant visuellement.
+        Les tags h1, h2 et h3 permettent de hiéarchiser les titres en différentes section dans le code HTML plus le chiffre après <i> h </i> est petit plus le titre est important et sera imposant visuellement.
       </p>
       <h3>
         3) À quoi sert le tag p ?
@@ -46,7 +55,9 @@
       <p>
         Le tag p représente un paragraphe dans le code, elle permet de séparer visuellement les différents textes en <i> "bloc". </i> 
       </p>
-    <h2>Exercice 3 : Uniform Resource Locator </h2>
+    <h2>
+      Exercice 3 : Uniform Resource Locator 
+    </h2>
       <h3>
         1) Quel est le nom de la machine à laquelle vous accédez ? <br>
         Quel est le nom de domaine auquel vous accédez ?
@@ -69,8 +80,8 @@
           w3.org mail is handled by 10 mimas.w3.org.
           w3.org mail is handled by 10 titan.w3.org.
           w3.org mail is handled by 50 bart.w3.org.
-          </pre>
-        La première ligne de la réponse de la commande <i> host w3.org </i> correspond à l'adresse IP de la machine à laquelle on accède grâce au DNS. <br>
+        </pre>
+        La première ligne de la réponse de la commande <i> host w3.org </i> correspond à l'adresse IPV4 de la machine à laquelle on accède grâce au DNS. <br>
         La deuxième ligne de la réponse correspond à cette fois-ci à l'adresse IPV6 <br>
         La troisième ligne de la réponse correspond aux machines qui gère les mails de ce nom de domaine
       </p>
@@ -83,7 +94,8 @@
         Error 1003 : Direct IP access not allowed. <br>
         You've requested an IP address that is part of the Cloudflare network. A valid Host header must be supplied to reach the desired website. <br>
         Cloudfare, l'hébergeur du site web nous empêche d'accéder au site directment en entrant l'adresse IP dans la barre de recherche. <br>  
-        Néanmoins en entrant 216.58.214.163 qui est l'adresse IP de Google.fr on arrive bien sur la page sans aucun erreur nous interrompant. 
+        Néanmoins en entrant 216.58.214.163 qui est l'adresse IP de Google.fr on arrive bien sur la page sans aucune erreur nous interrompant. <br>
+        L'utilisation des noms pour les machines plutôt que les adresses IP brut permettent de grandement améliorer l'expérience utilisateur en lui évitant de devoir retenir toutes les IP à chaque fois que celui-ci souhaite se rendre sur un site web. 
       </p>
       <h3>
         4) Exécutez la commande traceroute sur cette adresse IP. <br>
@@ -107,7 +119,7 @@
           10  172.70.94.2 (172.70.94.2)  8.864 ms 172.70.87.2 (172.70.87.2)  17.411 ms  16.584 ms
           11  104.18.23.19 (104.18.23.19)  8.833 ms  8.893 ms  8.384 ms
         </pre>
-      La commande traceroute permet de visualiser par où sont passés nos données et par conséquent de connaître la table de routage <br>
+      La commande traceroute permet de visualiser par où sont passés nos données et par conséquent de connaître la table de routage. <br>
       Le réseau sur lequel est connécté l'université s'appelle gwetud.u-pem.fr <br>
       Les autres réseaux traversés par les données sont : 
         <ol>
@@ -170,8 +182,56 @@
         Les adresses IP correspondant à vforax.github.io sont :  185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153 <br>
         Ce sont les même IP pour les deux pages car tout deux sont hébergés dans les serveurs de GitHub <br>
         Si on essaie d'accéder au site via l'adresse IP trouvé précédemment on se retrouve bloqué par une page erreur 404 indiquant que la page GitHub n'existe pas <br>
-        Si on essaie de remplacer forax.github.io par vincentjuge1987.github.io dans l'url https://forax.github.io/course/progweb/ on se retrouve aussi devant une page 404 indiquanr 
+        Si on essaie de remplacer <code> forax.github.io </code> par <code> vincentjuge1987.github.io </code> dans l'url <code> https://forax.github.io/course/progweb/ </code> on se retrouve aussi devant une page 404 indiquant que le fichier cherché (ici le cours progweb) est introuvable sur le site et nom de domaine
       </p>
+      <h2>
+        Exercice 4 : Service HTTP
+      </h2>
+        <h3>
+          1) Quel est le port TCP correspondant au protocole HTTP ? <br>
+          Quel est le header (l'en-tête, en français) de la réponse ?
+        </h3>
+          <p>
+            <pre>
+              C:\Users\yacin>ncat -C monge.univ-mlv.fr 80
+              GET /ens/ HTTP/1.0
+
+              HTTP/1.1 200 OK
+              Date: Mon, 22 Jan 2024 22:39:16 GMT
+              Server: Apache
+              Content-Length: 2957
+              Connection: close
+              Content-Type: text/html; charset=UTF-8
+            </pre>
+            Le port TCP correspondant au protocole HTTP est le 80
+            L'header à été recopié si dessus
+          </p>
+          <h3>
+            2) À quoi correspondent les 3 valeurs sur la première ligne de l'en-tête ?
+          </h3>
+          <p>
+            La première ligne correspond au code réponse ici le 200 qui signifie que tout est ok <br>
+            La deuxième retourne la date et heure à laquelle la requette netcat à été effectué ici avec le fuseau horaire GMT <br>
+            Enfin la troisième ligne renvoie le serveur
+          </p>
+          <h3>
+            3) Quel est le nom du serveur Web ?
+          </h3>
+          <p>
+            Le nom du serveur Web est Apache
+          </p>
+          <h3>
+            4) À quoi correspond la valeur de Content-Type ?
+          </h3>
+          <p>
+            La valeur Content-Type correspond au type du contenu obtenu ici une page text/html
+          </p>
+          <h3>
+            5) À quoi correspond la valeur de Content-Length ?
+          </h3>
+          <p>
+            La valeur Content-Length correspond à la longueur du contenu ici nous devinons que la page contient 2957 caractères
+          </p>
   </body>
 </html>
 
