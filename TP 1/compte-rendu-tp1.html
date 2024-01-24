@@ -237,34 +237,88 @@
           </h3>
           <p>
             <pre>
-              C:\Users\yacin>
-            </pre>
-            <ol>
-              <li> Les 3 valeurs sur la première ligne de l'en-tête ? :  </li>
-              <li> Quel est le nom du serveur Web ? / </li>
-              <li> La valeur de Content-Type ? : </li>
-              <li> La valeur de Content-Length ? : </li>
-            </ol>
+              yacine.hamadouche@pcbgp-2-ipt-16:~$ nc -C monge.univ-mlv.fr 80
+              GET /ens/toto.txt HTTP/1.0
+              
+              HTTP/1.1 404 Not Found
+              Date: Wed, 24 Jan 2024 08:52:52 GMT
+              Server: Apache
+              Connection: close
+              Content-Type: text/html
+              </pre>
+            <ul>
+              <li> Les 3 valeurs sur la première ligne de l'en-tête ? : La première ligne correspond au code réponse ici le 404 qui signifie que la page n'a pas été trouvée <br>
+                La deuxième retourne la date et heure à laquelle la requette netcat à été effectué ici avec le fuseau horaire GMT <br>
+                Enfin la troisième ligne renvoie le serveur </li>
+              <li> Quel est le nom du serveur Web ? : Apache </li>
+              <li> La valeur de Content-Type ? : text/html </li>
+              <li> La valeur de Content-Length ? : Valeur non donnée car la page n'a pas été trouvé </li>
+            </ul>
           </p>
           <h3>
             7) Faites la même analyse avec la requête : <code> GET /index.html HTTP/1.0 </code> 
           </h3>
           <p>
             <pre>
-              C:\Users\yacin>
-            </pre>
+              yacine.hamadouche@pcbgp-2-ipt-16:~$ nc -C monge.univ-mlv.fr 80
+              GET /index.html HTTP/1.0
+              
+              HTTP/1.1 302 Found
+              Date: Wed, 24 Jan 2024 08:58:19 GMT
+              Server: Apache
+              Location: http://igm.u-pem.fr/index.html
+              Content-Length: 279
+              Connection: close
+              Content-Type: text/html; charset=iso-8859-1
+              </pre>
             <ol>
-              <li> Les 3 valeurs sur la première ligne de l'en-tête ? :  </li>
-              <li> Quel est le nom du serveur Web ? : </li>
-              <li> La valeur de Content-Type ? : </li>
-              <li> La valeur de Content-Length ? : </li>
-              <li> À quoi correspond la valeur de Location ? : </li>
+              <li> Les 3 valeurs sur la première ligne de l'en-tête ? : La première ligne correspond au code réponse ici le 302 qui signifie que la page a été déplacée <br>
+                La deuxième retourne la date et heure à laquelle la requette netcat à été effectué ici avec le fuseau horaire GMT <br>
+                Enfin la troisième ligne renvoie le serveur  </li>
+              <li> Quel est le nom du serveur Web ? : Apache </li>
+              <li> La valeur de Content-Type ? : text/html avec un encodage charset=iso-8859-1 </li>
+              <li> La valeur de Content-Length ? : 279 </li>
+              <li> À quoi correspond la valeur de Location ? : La valeur <code> Location </code> indique vers quelle url la page à été déplacée </li>
             </ol>
           </p>
           <h3>
             8) Que se passe-t-il lorsque je lance la commande wget monge.univ-mlv.fr/index.html ? <br>
             Expliquer la signification des lignes qui apparaissent sur la ligne de commande.
           </h3>
+          <p>
+            La requête wget sert à télécharger des ressources diverses via une URL donnée
+            <pre>
+              yacine.hamadouche@pcbgp-2-ipt-16:~$ wget monge.univ-mlv.fr/index.html
+              --2024-01-24 10:02:08--  http://monge.univ-mlv.fr/index.html
+              Résolution de monge.univ-mlv.fr (monge.univ-mlv.fr)… 193.55.61.150
+              Connexion à monge.univ-mlv.fr (monge.univ-mlv.fr)|193.55.61.150|:80… connecté.
+              requête HTTP transmise, en attente de la réponse… 302 Found
+              Emplacement: http://igm.u-pem.fr/index.html [suivant]
+              --2024-01-24 10:02:08--  http://igm.u-pem.fr/index.html
+              Résolution de igm.u-pem.fr (igm.u-pem.fr)… 193.50.159.150
+              Connexion à igm.u-pem.fr (igm.u-pem.fr)|193.50.159.150|:80… connecté.
+              requête HTTP transmise, en attente de la réponse… 302 Found
+              Emplacement: https://igm.u-pem.fr/index.html [suivant]
+              --2024-01-24 10:02:08--  https://igm.u-pem.fr/index.html
+              Connexion à igm.u-pem.fr (igm.u-pem.fr)|193.50.159.150|:443… connecté.
+              requête HTTP transmise, en attente de la réponse… 301 Moved Permanently
+              Emplacement: //igm.univ-gustave-eiffel.fr/index.html [suivant]
+              --2024-01-24 10:02:08--  https://igm.univ-gustave-eiffel.fr/index.html
+              Résolution de igm.univ-gustave-eiffel.fr (igm.univ-gustave-eiffel.fr)… 193.55.45.10
+              Connexion à igm.univ-gustave-eiffel.fr (igm.univ-gustave-eiffel.fr)|193.55.45.10|:443… échec : Connexion terminée par expiration du délai d&apos;attente.
+              Nouvel essai.
+              --2024-01-24 10:04:20--  (essai:  2)  https://igm.univ-gustave-eiffel.fr/index.html
+              Connexion à igm.univ-gustave-eiffel.fr (igm.univ-gustave-eiffel.fr)|193.55.45.10|:443… 
+              échec: Connexion terminée par expiration du délai d&apos;attente.
+              Nouvel essai.
+              --2024-01-24 10:06:32--  (essai:  3)  https://igm.univ-gustave-eiffel.fr/index.html
+              Connexion à igm.univ-gustave-eiffel.fr (igm.univ-gustave-eiffel.fr)|193.55.45.10|:443… 
+              </pre>
+            La requête wget va tenter de télécharger la ressource de l'url <code> http://monge.univ-mlv.fr/index.html </code> <br>
+            Sauf que celui-ci à été déplacée vers un nouveau emplacement <code> http://igm.u-pem.fr/index.html </code> <br>
+            La requête va retenter d'obtenir la ressource mais une fois de plus le code 302 apparait pour cette fois <code> https://igm.u-pem.fr/index.html </code> <br>
+            Jusqu'à enfin arriver à https://igm.univ-gustave-eiffel.fr/index.html où la requête va se solder par un échec
+          </p>
   </body>
 </html>
 
