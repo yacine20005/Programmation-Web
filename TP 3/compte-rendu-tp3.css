@@ -1,0 +1,64 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+h2 {
+    font-size: 18pt;
+    color: navy;
+}
+
+h3 {
+    font-size: 16pt;
+}
+
+.centered {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+a:link,
+a:visited {
+    color: red;
+}
+
+a:hover,
+a:active {
+    color: rgb(0, 128, 128);
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid black;
+    padding: 8px;
+
+}
+
+th {
+    text-align: center;
+    font-variant: small-caps ;
+}
+
+tr:nth-child(even) {
+    background-color: rgb(80%, 80%, 90%);
+}
+
+tr:hover {
+    background-color:#1c780c;
+}
+
+li {
+    list-style-type: upper-roman;
+}
