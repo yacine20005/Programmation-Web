@@ -1,5 +1,10 @@
 body {
-    font-family: sans-serif;
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Remplacez 400 par la valeur de poids que vous souhaitez */
+    font-style: normal;
+    background-color: black;
 }
 
 h1 {
@@ -8,7 +13,7 @@ h1 {
 
 h2 {
     font-size: 18pt;
-    color: navy;
+    color: crimson;
 }
 
 h3 {
@@ -34,14 +39,14 @@ a:active {
 }
 
 table {
-    border: 1px solid black;
+    border: 1px solid white;
     border-collapse: collapse;
     width: 100%;
 }
 
 td,
 th {
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 8px;
 
 }
@@ -60,5 +65,5 @@ tr:hover {
 }
 
 li {
-    list-style-type: upper-roman;
+    list-style-type: lower-roman;
 }

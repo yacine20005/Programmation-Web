@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>Compte-rendu de TP2</title>
     <link rel="stylesheet" type="text/css" href="compte-rendu-tp3.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1 class="centered">Compte-rendu de TP2</h1>
@@ -21,7 +24,7 @@
           Exercice 0 : Mon compte-rendu est trop stylé ! et dont vous
           supprimerez les informations de style.
         </h3>
-        c'est fait !
+        C'est fait !
       </li>
       <li>
         <h3>
@@ -34,18 +37,18 @@
           compte-rendu-tp3.html et recopiez celles-ci dans compte-rendu-tp3.css.
           Attention aux balises &lt;style&gt;
         </h3>
-        C'est fait !
+        On a utilisé <code>&lt;link rel="stylesheet" type="text/css" href="compte-rendu-tp3.css" /&gt;</code> pour faire le lien entre le code <code>HTMl</code> et le code <code>CSS</code>
       </li>
       <li>
         <h3>
-          Pour la suite du TP, nous ne modifierons plus la balise style du compte-rendu mais le fichier compte-rendu-tp3.css
+          Pour la suite du TP, nous ne modifierons plus la balise style du compte-rendu mais le fichier compte-rendu-tp3.css <br>
           Faites en sorte que la liste des questions de cet exercice et de l'exercice précédent utilise les chiffres romains (en minuscules) plutôt que les traditionnels chiffres 1, 2, 3, etc.
         </h3>
-        C'est fait !
+        La balise li a été stylisée avec <code>list-style-type: lower-roman;</code> pour afficher les numéros de liste en chiffres romains minuscules.
       </li>
       <li>
         <h3>  
-          Le site https://en.wikipedia.org/wiki/List_of_2023_box_office_number-one_films_in_the_United_States contient un tableau des films au box office.
+          Le site contient un tableau des films au box office.
           On souhaite recopier le titre et le montant des recettes pour les 5 plus gros succès (il y a des flèches pour trier) pour les mettre dans une table dont nous allons changer l'aspect.
           Donc dans un premier temps, créez la table HTML dans votre compte-rendu, par exemple en utilisant des balises telles que table, tr, th, td …
         </h3>
@@ -81,43 +84,45 @@
             <td class="centered">106 109 650	$</td>
           </tr>
         </table>
+        Une table HTML a été créée avec les balises &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, et &lt;td&gt; pour afficher les titres, dates et les recettes des films.
       </li>
       <li>
         <h3>
           Faites en sorte que la table occupe toute la largeur du compte rendu.
         </h3>
-        C'est fait !
+        La table a été stylisée pour occuper toute la largeur du compte rendu en utilisant <code>width: 100%;</code>.
       </li>
       <li>
         <h3>
           Centrez les titres et changer la police de caractères des titres pour utiliser des petites majuscules (small caps).
         </h3>
-        C'est fait !
+        Les titres des colonnes ont été centrés avec <code>text-align: center;</code> pour les éléments &lt;th&gt;, 
+        et la propriété <code>font-variant: small-caps;</code> a été utilisée pour changer la police en petites majuscules.
       </li>
       <li>
         <h3>
           Aérez la table avec la propriété padding pour que le texte ne soit pas collé aux bordures des cases (qui sont invisibles a priori, mais que vous pouvez toujours rendre visibles si ça vous aide).
         </h3>
-        C'est fait !
+        La propriété <code>padding: 8px</code> a été appliquée aux éléments &lt;td&gt; et &lt;th&gt; pour ajouter de l'espace entre le texte et les bordures des cellules.
       </li>
       <li>
         <h3>
           Faites en sorte que les valeurs du tableau soient alignées à gauche, sauf celles de la dernière colonne, qui doivent être centrées.
         </h3>
-        C'est fait !
+        Le texte dans les cellules de la table a été aligné à gauche avec <code>text-align: left;</code>, et le texte dans la dernière colonne a été centré avec la classe <code>.centered</code>.
       </li>
       <li>
         <h3>
           Changez la couleur de fond des lignes paires (even) pour mettre du bleu (80% de rouge, 80% de vert et 90% de bleu) en utilisant la pseudo-classe :nth-child.
         </h3>
-        C'est fait !
+        Les lignes paires de la table ont reçu une couleur de fond bleue en utilisant <code>:nth-child(even)</code> et la valeur <code>background-color: rgb(80%, 80%, 90%);</code>.
       </li>
       <li>
         <h3>
           Faites en sorte que si l'on survole une ligne avec la souris la couleur du fond corresponde à 28 sur 255 de rouge, 120 sur 255 de vert et 12 sur 255 de bleu en utilisant un codage hexadécimal.
           Note: 26 en décimal correspond à 1A en hexadecimal car pour les dizaines, 26 / 16 = 1, et pour les unités 26 - 1 * 16 = 10 (qui s'écrit 'A').
         </h3>
-        C'est fait !
+        Lorsque l'utilisateur survole une ligne avec la souris, la couleur de fond est changée en utilisant un code hexadécimal <code>#1c780c</code> correspondant à une teinte de vert.
       </li>
     </ol>
     <h2>
@@ -148,49 +153,56 @@
         <h3>
           Faites en sorte que la liste ait une position fixe, en haut à gauche de la partie affichage du navigateur.
         </h3>
-        C'est fait
+        Le menu a été positionné de manière fixe en utilisant <code> position: fixed; </code> avec les propriétés <code> left: 0px;</code> et <code> top: 0px;</code>.
       </li>
       <li>
         <h3>
           Retirez le style par défaut des items de liste (avec list-style-type) pour qu'il n'y ait pas de style par défaut.
         </h3>
-        C'est fait !
+        Le style par défaut des items de liste a été supprimé en définissant <code>  list-style-type: none; </code>.
       </li>
       <li>
         <h3>
           Affichez les items en gras et avec une police Arial (ou sinon sans-serif).
         </h3>
-        C'est fait !
+        Les items ont été stylisés avec <code>font-weight: bold;</code> pour les afficher en gras et <code>font-family: Arial, sans-serif;</code> pour utiliser la police Arial 
+        ou une police sans-serif si Arial n'est pas disponible.
       </li>
       <li>
         <h3>
           Faites en sorte que les items soient affichés horizontalement collés à gauche et non plus verticalement.
         </h3>
-        C'est fait !
+        Les items ont été affichés horizontalement avec <code>display: inline-block;</code> pour les éléments li.
       </li>
       <li>
         <h3>
           Faites en sorte que les items aient une largeur de 100 pixels et ajoutez un espacement d'une dizaine de pixel entre les items.
         </h3>
-        C'est fait !
+        Les items ont été fixés à une largeur de 100 pixels avec <code>width: 100px;</code> et un espacement d'une dizaine de pixels a été ajouté autour des items avec <code>margin: 10px;</code>.
       </li>
       <li>
         <h3>
           Changez le fond du menu pour qu'il soit de couleur violette (purple), et changez la couleur des items pour qu'ils soient blancs.
         </h3>
-        C'est fait !
+        Le fond du menu a été changé en violet avec <code>background-color: purple;</code>, et la couleur du texte des items a été changée en blanc avec <code>color: white;</code>.
       </li>
       <li>
         <h3>
           Fixez la hauteur (height) du menu à 50 pixels puis faites en sorte que le menu occupe toute la largeur (width).
         </h3>
-        C'est fait !
+        La hauteur du menu a été fixée à 50 pixels avec <code>height: 50px;</code>, et la largeur du menu a été définie à 100% de la largeur de la fenêtre avec <code>width: 100%;</code>.
       </li>
       <li>
         <h3>
           Faites en sorte que l'item 'About' soit affiché à droite de la barre de menu.
         </h3>
-        C'est
+        L'item 'About' a été positionné à droite en lui attribuant <code>class="about"</code> et en utilisant <code>float: right;</code> pour cette classe.
+      </li>
+      <li>
+        <h3>
+          Affichez une ligne de 2 pixels en bas du menu.
+        </h3>
+        Une ligne de 2 pixels en bas du menu a été ajoutée avec <code>border-bottom: 2px solid black;</code>.
       </li>
     </ol>
   </body>
