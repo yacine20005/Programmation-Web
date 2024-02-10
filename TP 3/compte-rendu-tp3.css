@@ -2,7 +2,7 @@ body {
     color: white;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400; /* Remplacez 400 par la valeur de poids que vous souhaitez */
+    font-weight: 400;
     font-style: normal;
     background-color: black;
 }
