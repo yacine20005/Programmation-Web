@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Compte-rendu de TP2</title>
-    <link rel="stylesheet" type="text/css" href="compte-rendu-tp3.css" />
+    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -133,16 +133,64 @@
         <h3>
           Récupérez six images d'animaux dans un fichier zippé ainsi que le fichier exo2.html.
           Vérifiez que les images s'affichent correctement lorsque vous visualisez le document.
-          Note 1 : On rappelle que le fichier exo2.html ne doit être modifié que en ajoutant des classes aux boîtes, et des informations de style, la structure du document doit rester la même.
-          Note 2 : Le fichier resultat-exo2.png correspond à l'affichage que l'on souhaite avoir à la fin de cet exercice.
         </h3>
         C'est fait !
       </li>
       <li>
         <h3>
           Faites en sorte que toutes les images à l'intérieur des boîtes (pas les autres) aient une largeur (width) de 180 pixels.
-          Note : on suppose que l'on peut ajouter des images pas dans les boîtes par la suite.
         </h3>
+        Pour définir la largeur des images à 180 pixels, on a utilisé <code>.animal img : width: 180px;</code>.
+      </li>
+      <li>
+        <h3>
+          Au lieu d'afficher les images verticalement, on souhaite les afficher horizontalement.
+          Utilisez pour cela l'attribut float.
+        </h3>
+        Pour aligner les images horizontalement, on a utilisé <code>float: inline-start;</code>.
+      </li>
+      <li>
+        <h3>
+          Que se passe-t-il si l'on fait varier la taille de la fenêtre du navigateur horizontalement ?
+        </h3>
+        Lorsqu'on modifie la taille de la fenêtre horizontalement, les images s'ajustent automatiquement en fonction de l'espace disponible.
+      </li>
+      <li>
+        <h3>
+          Vérifiez que vous pouvez aussi mettre toutes les images à droite en changeant juste un mot dans la partie CSS du document.
+          Puis remettez les images alignées à gauche.
+        </h3>
+        Pour aligner toutes les images à droite, il suffit de remplacer <code>inline-start</code> par <code>inline-end</code>.
+      </li>
+      <li>
+        <h3>
+          Faites en sorte que les titres (animal1, animal2, etc.) soient affichés en blanc sur fond noir et soient centrés horizontalement par rapport à la boîte qui les contient.
+        </h3>
+        On a ajouté dans la classe <code>.text</code> les propriétés <code>background-color, color, text-align, width, et height</code>.
+      </li>
+      <li>
+        <h3>
+          Espacez les unes des autres les six boîtes contenant les images avec la propriété margin.
+        </h3>
+        Les espaces entre les boîtes d'images ont été ajoutés en utilisant la propriété <code>margin</code>.
+      </li>
+      <li>
+        <h3>
+          Faites en sorte que les images à l'intérieur des boîtes aient une bordure de trois pixels de largeur de couleur #aaaaaa.
+        </h3>
+        Les bordures ont été ajoutées en utilisant la propriété <code>border</code>
+      </li>
+      <li>
+        <h3>
+          Changez l'opacité (propriété opacity) lorsque l'utilisateur passe sa souris au-dessus d'une image dans une boîte.
+        </h3>
+        Pour changer l'opacité au survol des images, on a utilisé <code>img:hover { opacity: 33%; }</code>
+      </li>
+      <li>
+        <h3>
+          Faites en sorte que le texte à mettre après soit situé en-dessous des images et de leurs titres, et non pas à leur droite.
+        </h3>
+        Le texte est situé dans une div distincte avec la classe .text_end, ce qui garantit qu'il apparaît après les images et leurs titres avec <code>clear: both;</code>.
       </li>
     </ol>
     <h2>

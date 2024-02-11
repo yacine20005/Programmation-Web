@@ -1,40 +1,64 @@
 <!DOCTYPE html>
 <html>
- <meta charset="utf-8">
- <head>
-  <style>
-    .cla img {
-        width: 180px
-    }
-  </style>
- </head>
- <body>
-   <div class="cla">
-    <img src="animal1.jpg">
-    <div>Animal 1</div>
-   </div>
-   <div class="cla">
-    <img src="animal2.jpg">
-    <div>Animal 2</div>
-   </div>
-   <div class="cla">
-    <img src="animal3.jpg">
-    <div>Animal 3</div>
-   </div>
-   <div class="cla">
-    <img src="animal4.jpg">
-    <div>Animal 4</div>
-   </div>
-   <div class="cla">
-    <img src="animal5.jpg">
-    <div>Animal 5</div>
-   </div>
-   <div class="cla">
-    <img src="animal6.jpg">
-    <div>Animal 6</div>
-   </div>
-  <div class="end">
-   Texte à mettre après.
-  </div>
- </body>
+  <meta charset="utf-8" />
+  <head>
+    <style>
+
+      img:hover {
+        opacity: 33%;
+      }
+      .animal {
+        height: 220px;
+        background-color: white;
+        float: inline-start;
+      }
+
+      .text {
+        position: relative;
+        background-color: black;
+        color: white;
+        text-align: center;
+        width: 185px;
+        height: 30px;
+        margin: 0px 10px 0px;
+      }
+
+      .animal img {
+        width: 180px;
+        margin: 10px 10px -10px;
+        border: 3px solid #aaaaaa;
+        border-collapse: collapse;
+      }
+      .text_end {
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="animal">
+      <img src="animal1.jpg" />
+      <div class="text">Animal 1</div>
+    </div>
+    <div class="animal">
+      <img src="animal2.jpg" />
+      <div class="text">Animal 2</div>
+    </div>
+    <div class="animal">
+      <img src="animal3.jpg" />
+      <div class="text">Animal 3</div>
+    </div>
+    <div class="animal">
+      <img src="animal4.jpg" />
+      <div class="text">Animal 4</div>
+    </div>
+    <div class="animal">
+      <img src="animal5.jpg" />
+      <div class="text">Animal 5</div>
+    </div>
+    <div class="animal">
+      <img src="animal6.jpg" />
+      <div class="text">Animal 6</div>
+    </div>
+    <div class="text_end">Texte à mettre après.</div>
+  </body>
 </html>
