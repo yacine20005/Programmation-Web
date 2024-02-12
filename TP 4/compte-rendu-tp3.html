@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Compte-rendu de TP2</title>
+    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="centered">Compte-rendu de TP2</h1>
+    <div class="right">
+      <p>
+        Yacine HAMADOUCHE <br />
+        Gavau--Pelissier Liam
+      </p>
+    </div>
+    <h2>Exercice 1 : Hello World &nbsp;!</h2>
+    <ol>
+      <li>
+        <h3>Recopiez la page Web exo1.html dans votre répertoire tp4.</h3>
+        C'est fait !
+        <h3>Que se passe-t-il lorsque l'on visualise la page ?</h3>
+        Lorsque on visualise la page, <i>Hello</i> est affiché dans la console.
+        <h3>Comment fait-on pour ouvrir la console avec Firefox ?</h3>
+        Pour ouvrir la console avec Firefox, on fait clic droit puis on
+        selectionne, <i>inspecter</i>, ensuite on entre dans la <i>console</i>
+        <h3>Et avec Chrome ?</h3>
+        Même chose, il est de plus possible de rentrer le raccourci
+        <code>CTRL + SHIFT + J</code>
+      </li>
+      <li>
+        <h3>Mettez l'ancien code en commentaire.</h3>
+        C'est fait !
+        <h3>
+          Ecrivez un code permettant d'afficher, toujours dans la console, les
+          nombres de 0 à 2023 inclus (il n'est pas nécessaire de faire une
+          fonction pour l'instant).
+        </h3>
+        J'ai utiliser une boucle for qui va creer une variable i et qui va 
+        l'incrementer de 1 a chaque fois jusqu'a ce qu'elle atteigne 2023, 
+        ensuite on va afficher la variable a chaque incrementation.
+      </li>
+      <li>
+        <h3>Mettez l'ancien code en commentaire.</h3>
+        C'est fait !
+        <h3>
+          Réécrivez un nouveau code code pour afficher dans la console les
+          nombres divisibles par 2 ou par 3 allant de 0 à 2023 <br />
+          inclus : 0, 2, 3, 4, 6, 8, …, 2018, 2019, 2020, 2022.
+        </h3>
+        J'ai repris le code précédent, je lui ai ajouté une condition if,
+         verifiant si le reste de la division entre l'entier i et 2 ou 3 
+         est égal a 0 alors l'entier serait divisibles par 2 ou par 3 alors, 
+         on l'affiche.
+      </li>
+      <li>
+        <h3>
+          Commentez l'ancien code et écrire une fonction (que vous nommerez de
+          façon claire et intelligente) prenant un entier en paramètre et
+          affichant sur la console les nombres divisibles par 2 ou par 3 allant
+          de de 0 à cet entier (inclus). Puis écrivez un code de test de la
+          fonction avec les valeurs 7 et puis 10. Que se passe-t-il si on teste
+          la fonction avec la valeur -1 ?
+        </h3>
+        Alors pour cette question, j'ai repris le code précédent je l'ai mis dans
+        une fonction que j'ai appelé MultipleDe2et3, car elle permet d'avoir tout
+        les multiples de 2 et 3 jusqu'a l'entier mis en parametre, après avoir 
+        mis le code précédent dans une fonction, j'ai modifié la condition de la 
+        boucle, et j'ai remplacé le 2024 par le parametre, ici 'int'
+      </li>
+    </ol>
+    <h2>Exercice 2 : Damier</h2>
+    <ol>
+      <li>
+        <h3>Recopiez la page Web exo2b.html dans votre répertoire tp4.</h3>
+        C'est fait
+      </li>
+      <li>
+        <h3>Expliquez ce que fait la première ligne du script :</h3>
+        La première ligne permet de se mettre en mode <code>strict</code> pour 
+        le restant du script ce qui permettra d'éviter les 
+        <i>erreurs silencienses</i> du <code>JavaScript</code>
+      </li>
+      <li>
+        <h3>
+          Expliquez comment faire pour ajouter un enfant ou une classe à un
+          élément, puis expliquer comment fonctionne la fonction makeCell.
+        </h3>
+        Pour ajouter un enfant à un élément parent nous utilisons 
+        <code>parent.appendChild(element)</code> <br>
+        et pour une classe ca sera <code>element.classList.add(chose)</code> <br>
+        <pre>
+          const makeCell = function(id) 
+          const table = document.getElementById(id);
+          const row = document.createElement("tr");
+          const cell = document.createElement("td");
+          row.appendChild(cell);
+          table.appendChild(row);
+        </pre>
+        La fonction makeCell va dans un premier temps récupérer l'élément grâce à son id <br>
+        Ensuite celui-ci va affecter à la variable row et cell respectivement une ligne et une colonne <br>
+        Pour enfin les ajouter (à compléter)
+      </li>
+      <li>
+        <h3>
+          Remplissez le contenu de la fonction makeLine de sorte que l'appel à
+          makeLine(5, "table-2"); transforme la table d'identifiant "table-2" en
+          un tableau d'une ligne et cinq colonnes.
+        </h3>
+        Reponse
+      </li>
+      <li>
+        <h3>
+          Remplissez le contenu de la fonction makeSquare de sorte que l'appel à
+          makeSquare(8, "table-3"); transforme la table d'identifiant "table-3"
+          en un tableau de huit lignes et huit colonnes.
+        </h3>
+        Reponse
+      </li>
+      <li>
+        <h3>
+          Vérifiez que la table d'identifiant "table-4" est maintenant un
+          tableau de trois lignes et trois colonnes. <br />
+          Si ce n'est pas le cas, reprenez la fonction précédente.
+        </h3>
+        Reponse
+      </li>
+      <li>
+        <h3>
+          Complétez le style de la balise style du document pour définir une
+          case noire et une case blanche et utilisez ce style pour les cases de
+          chacun des quatre tableaux (vous êtes libre de commencer par une case
+          blanche ou par une case noire).
+        </h3>
+        Reponse
+      </li>
+      <li>
+        <h3>
+          Ajoutez un style de case marron puis commentez votre code de la
+          fonction makeSquare et réécrivez-la pour ajouter un dernier paramètre
+          à makeSquare ; ce paramètre pouvant être vrai ou faux. Si le paramètre
+          est vrai, alors il faudra afficher la diagonale en marron.
+        </h3>
+        Reponse
+      </li>
+      <li>
+        <h3>
+          Testez en affichant en marron la diagonale du premier carré (mais pas
+          celle du second).
+        </h3>
+        Reponse
+      </li>
+    </ol>
+  </body>
+</html>
