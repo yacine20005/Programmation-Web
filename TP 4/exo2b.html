@@ -13,6 +13,14 @@
         padding: 15px;
         border: 1px solid black;
       }
+
+      td.noir {
+        background-color: black;
+      }
+
+      td.blanc {
+        background-color: white;
+      }
     </style>
     <script>
       "use strict";
@@ -30,52 +38,28 @@
         row.appendChild(cell);
         table.appendChild(row);
       };
-    
-      const makeLine = function (width, id) {
-        const div = document.getElementById("dom-new");
-        for (let i = 0; i < 10; i++) {
-            const element = document.createElement("div");
-            element.id = `new-${i}`;
-            if (i % 2 == 0) { element.classList.add("blue"); }
-        div.appendChild(element);
-}
-      }
 
-      const makeLine_old = function (width, id) {
+      const makeLine = function (nb, id) {
         const table = document.getElementById(id);
-        for (let i = 0; i < width; i++) {
-            const cell = document.createElement("td");
-            const row = document.createElement("tr");
-            row.appendChild(cell);
-            table.appendChild(row);   
+        const row = document.createElement("tr");
+        for (let i = 0; i < nb; i++) {
+          const cell = document.createElement("td");
+          row.appendChild(cell);
         }
-      };
-
-      const makeLine_2 = function (width, id) {
-        const table = document.getElementById(id);
-        const cell = document.createElement("td");
-        for (let i = 0; i < width; i++) {
-            const row = document.createElement("tr");
-            cell.appendChild(row);
-        }
-        console.log(cell);
-        table.appendChild(cell);
-        console.log(table);
-        return(table)
+        table.appendChild(row);
       };
 
       const makeSquare = function (size, id) {
         const table = document.getElementById(id);
         for (let i = 0; i < size; i++) {
+          const row = document.createElement("tr");
+          for (let j = 0; j < size; j++) {
             const cell = document.createElement("td");
-            const row = document.createElement("tr");
-            row.appendChild(cell)
+            row.appendChild(cell);
+          }
+          table.appendChild(row);
         }
-        for (let k = 0; k < size; k++) {
-            cell.appendChild(row)
-        }
-            table.appendChild(row);   
-        }
+      };
     </script>
   </head>
   <body>

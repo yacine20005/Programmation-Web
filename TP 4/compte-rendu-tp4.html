@@ -12,7 +12,7 @@
     />
   </head>
   <body>
-    <h1 class="centered">Compte-rendu de TP2</h1>
+    <h1 class="centered">Compte-rendu de TP4</h1>
     <div class="right">
       <p>
         Yacine HAMADOUCHE <br />
@@ -41,8 +41,8 @@
           nombres de 0 à 2023 inclus (il n'est pas nécessaire de faire une
           fonction pour l'instant).
         </h3>
-        J'ai utiliser une boucle for qui va creer une variable i et qui va 
-        l'incrementer de 1 a chaque fois jusqu'a ce qu'elle atteigne 2023, 
+        J'ai utiliser une boucle for qui va creer une variable i et qui va
+        l'incrementer de 1 a chaque fois jusqu'a ce qu'elle atteigne 2023,
         ensuite on va afficher la variable a chaque incrementation.
       </li>
       <li>
@@ -54,9 +54,8 @@
           inclus : 0, 2, 3, 4, 6, 8, …, 2018, 2019, 2020, 2022.
         </h3>
         J'ai repris le code précédent, je lui ai ajouté une condition if,
-         verifiant si le reste de la division entre l'entier i et 2 ou 3 
-         est égal a 0 alors l'entier serait divisibles par 2 ou par 3 alors, 
-         on l'affiche.
+        verifiant si le reste de la division entre l'entier i et 2 ou 3 est égal
+        a 0 alors l'entier serait divisibles par 2 ou par 3 alors, on l'affiche.
       </li>
       <li>
         <h3>
@@ -67,23 +66,20 @@
           fonction avec les valeurs 7 et puis 10. Que se passe-t-il si on teste
           la fonction avec la valeur -1 ?
         </h3>
-        Alors pour cette question, j'ai repris le code précédent je l'ai mis dans
-        une fonction que j'ai appelé MultipleDe2et3, car elle permet d'avoir tout
-        les multiples de 2 et 3 jusqu'a l'entier mis en parametre, après avoir 
-        mis le code précédent dans une fonction, j'ai modifié la condition de la 
-        boucle, et j'ai remplacé le 2024 par le parametre, ici 'int'
+        Alors pour cette question, j'ai repris le code précédent je l'ai mis
+        dans une fonction que j'ai appelé MultipleDe2et3, car elle permet
+        d'avoir tout les multiples de 2 et 3 jusqu'a l'entier mis en parametre,
+        après avoir mis le code précédent dans une fonction, j'ai modifié la
+        condition de la boucle, et j'ai remplacé le 2024 par le parametre, ici
+        'int'
       </li>
     </ol>
     <h2>Exercice 2 : Damier</h2>
     <ol>
       <li>
-        <h3>Recopiez la page Web exo2b.html dans votre répertoire tp4.</h3>
-        C'est fait
-      </li>
-      <li>
         <h3>Expliquez ce que fait la première ligne du script :</h3>
-        La première ligne permet de se mettre en mode <code>strict</code> pour 
-        le restant du script ce qui permettra d'éviter les 
+        La première ligne permet de se mettre en mode <code>strict</code> pour
+        le restant du script ce qui permettra d'éviter les
         <i>erreurs silencienses</i> du <code>JavaScript</code>
       </li>
       <li>
@@ -91,9 +87,10 @@
           Expliquez comment faire pour ajouter un enfant ou une classe à un
           élément, puis expliquer comment fonctionne la fonction makeCell.
         </h3>
-        Pour ajouter un enfant à un élément parent nous utilisons 
-        <code>parent.appendChild(element)</code> <br>
-        et pour une classe ca sera <code>element.classList.add(chose)</code> <br>
+        Pour ajouter un enfant à un élément parent nous utilisons
+        <code>.appendChild(element)</code> <br />
+        Pour ajouter une classe nous utilisons cette fois
+        <code>.classList.add(element)</code> <br />
         <pre>
           const makeCell = function(id) 
           const table = document.getElementById(id);
@@ -102,9 +99,11 @@
           row.appendChild(cell);
           table.appendChild(row);
         </pre>
-        La fonction makeCell va dans un premier temps récupérer l'élément grâce à son id <br>
-        Ensuite celui-ci va affecter à la variable row et cell respectivement une ligne et une colonne <br>
-        Pour enfin les ajouter (à compléter)
+        La fonction makeCell va dans un premier temps récupérer l'élément grâce
+        à l'id donné en argument <br />
+        Ensuite celui-ci va créer à la suite respectivement une ligne et une
+        colonne <br />
+        Pour enfin ajouter la colonne à la ligne et la ligne à la table.
       </li>
       <li>
         <h3>
@@ -112,7 +111,22 @@
           makeLine(5, "table-2"); transforme la table d'identifiant "table-2" en
           un tableau d'une ligne et cinq colonnes.
         </h3>
-        Reponse
+        <pre>
+          const makeLine = function (nb, id) {
+            const table = document.getElementById(id);
+            const row = document.createElement("tr");
+            for (let i = 0; i < nb; i++) {
+              const cell = document.createElement("td");
+              row.appendChild(cell);
+            }
+            table.appendChild(row);
+          };
+        </pre>
+        Cette fonction crée une nouvelle ligne, <br />
+        Puis à avec une boucle for, elle crée le nombre voulu de colonnes
+        &lt;td&gt; <br />
+        Les attache à la ligne. <br />
+        Enfin, elle attache la ligne à la table.
       </li>
       <li>
         <h3>
@@ -120,7 +134,26 @@
           makeSquare(8, "table-3"); transforme la table d'identifiant "table-3"
           en un tableau de huit lignes et huit colonnes.
         </h3>
-        Reponse
+        <pre>
+          const makeSquare = function (size, id) {
+            const table = document.getElementById(id);
+            for (let i = 0; i < size; i++) {
+              const row = document.createElement("tr");
+              for (let j = 0; j < size; j++) {
+                const cell = document.createElement("td");
+                row.appendChild(cell);
+              }
+              table.appendChild(row);
+            }
+          };
+        </pre>
+        Cette fonction utilise deux boucles, une pour les lignes et une pour les
+        colonnes. <br />
+        Elle crée une nouvelle ligne pour chaque itération de la première boucle
+        <br />
+        Puis à l'intérieur de cette boucle, elle crée le nombre spécifié de
+        cellules et les attache à la ligne. <br />
+        Enfin, elle attache la ligne à la table.
       </li>
       <li>
         <h3>
@@ -128,7 +161,7 @@
           tableau de trois lignes et trois colonnes. <br />
           Si ce n'est pas le cas, reprenez la fonction précédente.
         </h3>
-        Reponse
+        C'est fait !
       </li>
       <li>
         <h3>
