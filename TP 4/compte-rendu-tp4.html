@@ -170,7 +170,60 @@
           chacun des quatre tableaux (vous êtes libre de commencer par une case
           blanche ou par une case noire).
         </h3>
-        Reponse
+        Deux nouvelles classes CSS ont été ajoutées <code>.noir</code> et <code>.blanc</code>. <br>
+        Ces classes définissent le fond des cellules respectivement en noir et en blanc.
+        <pre>
+          const makeCell = function (id) {
+            const table = document.getElementById(id);
+            const row = document.createElement("tr");
+            const cell = document.createElement("td");
+            cell.classList.add("noir")
+            row.appendChild(cell);
+            table.appendChild(row);
+          };
+        </pre>
+        La classe noir est ajoutée à la cellule créée avec <code>cell.classList.add("noir")</code>.
+        <pre>
+          const makeLine = function (nb, id) {
+            const table = document.getElementById(id);
+            const row = document.createElement("tr");
+            for (let i = 0; i < nb; i++) {
+              const cell = document.createElement("td");
+              if (i % 2 == 0) {
+                cell.classList.add("noir")
+              }
+              else if (i % 2 == 1) {
+                cell.classList.add("blanc")
+              }
+              row.appendChild(cell);
+            }
+            table.appendChild(row);
+          };
+    
+          const makeSquare = function (size, id) {
+            const table = document.getElementById(id);
+            for (let i = 0; i < size; i++) {
+              const row = document.createElement("tr");
+              for (let j = 0; j < size; j++) {
+                const cell = document.createElement("td");
+                if ((i + j) % 2 == 0) {
+                cell.classList.add("noir")
+                }
+                else if ((i + j) % 2 == 1) {
+                cell.classList.add("blanc")
+                }
+                row.appendChild(cell);
+              }
+              table.appendChild(row);
+            }
+          };
+        </pre>
+        Enfin pour <code>makeLine</code> et <code>makeSquare</code> les classes sont ajoutés en
+        fonction de l'indice de la boucle grâce à <code>if (i % 2 == 0)</code> et <code> else if (i % 2 == 1)</code>. <br>
+        Si celle-ci est pair la couleur sera noir sinon blanc. <br>
+        Ainsi pour <code>makeSquare</code> comme 2 boucles sont imbriqués entre elles nous prenons la
+        somme des deux indices et vérifiont si celle-ci est pair ou non : <code>if ((i + j) % 2 == 0)</code>; 
+        <code>else if ((i + j) % 2 == 1)</code>.
       </li>
       <li>
         <h3>
