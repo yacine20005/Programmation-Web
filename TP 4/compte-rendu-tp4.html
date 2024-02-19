@@ -80,7 +80,7 @@
         <h3>Expliquez ce que fait la première ligne du script :</h3>
         La première ligne permet de se mettre en mode <code>strict</code> pour
         le restant du script ce qui permettra d'éviter les
-        <i>erreurs silencienses</i> du <code>JavaScript</code>
+        <i>erreurs silencieuses</i> du <code>JavaScript</code>
       </li>
       <li>
         <h3>
@@ -100,7 +100,7 @@
           table.appendChild(row);
         </pre>
         La fonction makeCell va dans un premier temps récupérer l'élément grâce
-        à l'id donné en argument <br />
+        à l'id donner en argument <br />
         Ensuite celui-ci va créer à la suite respectivement une ligne et une
         colonne <br />
         Pour enfin ajouter la colonne à la ligne et la ligne à la table.
@@ -123,9 +123,9 @@
           };
         </pre>
         Cette fonction crée une nouvelle ligne, <br />
-        Puis à avec une boucle for, elle crée le nombre voulu de colonnes
+        Puis avec une boucle for, elle crée le nombre voulu de colonnes
         &lt;td&gt; <br />
-        Les attache à la ligne. <br />
+        les attaches à la ligne. <br />
         Enfin, elle attache la ligne à la table.
       </li>
       <li>
@@ -170,8 +170,10 @@
           chacun des quatre tableaux (vous êtes libre de commencer par une case
           blanche ou par une case noire).
         </h3>
-        Deux nouvelles classes CSS ont été ajoutées <code>.noir</code> et <code>.blanc</code>. <br>
-        Ces classes définissent le fond des cellules respectivement en noir et en blanc.
+        Deux nouvelles classes CSS ont été ajoutées <code>.noir</code> et
+        <code>.blanc</code>. <br />
+        Ces classes définissent le fond des cellules respectivement en noir et
+        en blanc.
         <pre>
           const makeCell = function (id) {
             const table = document.getElementById(id);
@@ -182,7 +184,8 @@
             table.appendChild(row);
           };
         </pre>
-        La classe noir est ajoutée à la cellule créée avec <code>cell.classList.add("noir")</code>.
+        La classe noir est ajoutée à la cellule créée avec
+        <code>cell.classList.add("noir")</code>.
         <pre>
           const makeLine = function (nb, id) {
             const table = document.getElementById(id);
@@ -218,11 +221,14 @@
             }
           };
         </pre>
-        Enfin pour <code>makeLine</code> et <code>makeSquare</code> les classes sont ajoutés en
-        fonction de l'indice de la boucle grâce à <code>if (i % 2 == 0)</code> et <code> else if (i % 2 == 1)</code>. <br>
-        Si celle-ci est pair la couleur sera noir sinon blanc. <br>
-        Ainsi pour <code>makeSquare</code> comme 2 boucles sont imbriqués entre elles nous prenons la
-        somme des deux indices et vérifiont si celle-ci est pair ou non : <code>if ((i + j) % 2 == 0)</code>; 
+        Enfin pour <code>makeLine</code> et <code>makeSquare</code> les classes
+        sont ajoutées en fonction de l'indice de la boucle grâce à
+        <code>if (i % 2 == 0)</code> et <code> else if (i % 2 == 1)</code>.
+        <br />
+        Si celle-ci est pair la couleur sera noir sinon blanche. <br />
+        Ainsi pour <code>makeSquare</code> comme 2 boucles sont imbriqués entre
+        elles nous prenons la somme des deux indices et vérifions si celle-ci
+        est pair ou non : <code>if ((i + j) % 2 == 0)</code>;
         <code>else if ((i + j) % 2 == 1)</code>.
       </li>
       <li>
@@ -232,8 +238,9 @@
           à makeSquare ; ce paramètre pouvant être vrai ou faux. Si le paramètre
           est vrai, alors il faudra afficher la diagonale en marron.
         </h3>
-        Une nouvelle classe CSS a été ajouté pour les cellules marron <code>td.marron</code>
-        qui permet de définir le fond des cellules en marron <br>
+        Une nouvelle classe CSS a été ajoutée pour les cellules marron
+        <code>td.marron</code> qui permet de définir le fond des cellules en
+        marron <br />
         <pre>
           const makeSquare = function (size, id, brown) {
             const table = document.getElementById(id);
@@ -258,11 +265,11 @@
             }
           };
         </pre>
-        Un nouveau paramètre <code>brown</code> à été ajouté afin de d'actionner l'apparition ou non de la
-        diagonale marron <br>
-        Avec cette nouvelle fonction, si <code>brown</code> est vrai et que les deux boucles se trouvent
-        à la même indice alors la classe marron est ajouté sinon ca sera la classe noir ou blanc 
-        qui sera ajouté
+        Un nouveau paramètre <code>brown</code> a été ajouté afin de d'actionner
+        l'apparition ou non de la diagonale marron <br />
+        Avec cette nouvelle fonction, si <code>brown</code> est vrai et que les
+        deux boucles se trouvent à la même indice alors la classe marron est
+        ajoutée sinon ça sera la classe <code>noir</code> ou <code>blanc</code> qui sera ajoutée
       </li>
       <li>
         <h3>
@@ -272,20 +279,24 @@
         C'est fait !
       </li>
     </ol>
-    <h2>
-      Exercice 3 : On fera en fonction…
-    </h2>
+    <h2>Exercice 3 : On fera en fonction…</h2>
     <ol>
       <li>
         <h3>
-          Copiez-collez le document exo2b.html et nommez exo3.html votre copie. Ci-dessous, vous effectuerez vos modifications sur ce nouveau document exo3.html.
+          Copiez-collez le document exo2b.html et nommez exo3.html votre copie.
+          Ci-dessous, vous effectuerez vos modifications sur ce nouveau document
+          exo3.html.
         </h3>
         C'est fait !
       </li>
       <li>
         <h3>
-          Faites en sorte que la fonction makeCell prenne un argument supplémentaire, qui sera la couleur (black, white ou brown) de la case. <br>
-          Par exemple, si j'appelle makeCell("table-1","brown"), on dessinera une case de classe "brown", qui aura vocation à être dessinée en marron comme indiqué dans les informations de style du document.
+          Faites en sorte que la fonction makeCell prenne un argument
+          supplémentaire, qui sera la couleur (black, white ou brown) de la
+          case. <br />
+          Par exemple, si j'appelle makeCell("table-1","brown"), on dessinera
+          une case de classe "brown", qui aura vocation à être dessinée en
+          marron comme indiqué dans les informations de style du document.
         </h3>
         <pre>
           const makeCell = function (id, color) {
@@ -297,14 +308,17 @@
             table.appendChild(row);
           };
         </pre>
-        Un deuxième paramètre <code>color</code> a été ajouté à la fonction <code>makeCell</code>. 
-        Cet argument représente la couleur de la case et sera utilisé pour ajouter 
-        la classe correspondante à la cellule. <br>
-        La classe est ajoutée à la cellule en utilisant <code>cell.classList.add(color)</code> <br>
+        Un deuxième paramètre <code>color</code> a été ajouté à la fonction
+        <code>makeCell</code>. Cet argument représente la couleur de la case et
+        sera utilisé pour ajouter la classe correspondante à la cellule. <br />
+        La classe est ajoutée à la cellule en utilisant
+        <code>cell.classList.add(color)</code> <br />
       </li>
       <li>
         <h3>
-          Définissez une fonction color(i,j) qui renvoie la couleur de la case en ligne i et colonne j d'un damier carré sans cases marron (comme à la question 6 de l'exercice 2).
+          Définissez une fonction color(i,j) qui renvoie la couleur de la case
+          en ligne i et colonne j d'un damier carré sans cases marron (comme à
+          la question 6 de l'exercice 2).
         </h3>
         <pre>
           const color = function (i, j) {
@@ -316,20 +330,88 @@
             }
           };
         </pre>
-        Cette fonction prend i et j et utilise la même logique que celle utilisée pour déterminer la couleur des cases dans <code>makeSquare</code>. 
+        Cette fonction prend i et j et utilise la même logique que celle
+        utilisée pour déterminer la couleur des cases dans
+        <code>makeSquare</code>.
       </li>
       <li>
         <h3>
-          Redéfinissez la fonction makeSquare pour que, outre l'identifiant du tableau à transformer et la dimension de la grille qu'elle doit dessiner, le troisième argument que prend cette fonction soit non plus un booléen qui dira si on doit peindre (ou non) en marron la diagonale de la grille, mais une fonction d'affichage qui associera à paire (i,j) la couleur de la case en ligne i et colonne j. <br>
-          Notez que dans cette question, la fonction makeSquare prend en troisième argument une fonction, comme la fonction doItTwice vue en cours. Par exemple, si j'appelle makeSquare(3, "table-4", color), où color est la fonction de la question 3, on dessinera 3×3 cases, et la case en ligne 1 et colonne 2 sera de couleur color(1,2)
+          Redéfinissez la fonction makeSquare pour que, outre l'identifiant du
+          tableau à transformer et la dimension de la grille qu'elle doit
+          dessiner, le troisième argument que prend cette fonction soit non plus
+          un booléen qui dira si on doit peindre (ou non) en marron la diagonale
+          de la grille, mais une fonction d'affichage qui associera à paire
+          (i,j) la couleur de la case en ligne i et colonne j. <br />
+          Notez que dans cette question, la fonction makeSquare prend en
+          troisième argument une fonction, comme la fonction doItTwice vue en
+          cours. Par exemple, si j'appelle makeSquare(3, "table-4", color), où
+          color est la fonction de la question 3, on dessinera 3×3 cases, et la
+          case en ligne 1 et colonne 2 sera de couleur color(1,2)
         </h3>
-        Reponse
+        <pre>
+          const makeSquare = function (size, id, color) {
+            const table = document.getElementById(id);
+            for (let i = 0; i < size; i++) {
+              const row = document.createElement("tr");
+              for (let j = 0; j < size; j++) {
+                const cell = document.createElement("td");
+                cell.classList.add(color(i, j));
+                row.appendChild(cell);
+              }
+              table.appendChild(row);
+            }
+          };
+        </pre>
+        Le troisième argument est désormais la fonction color 
+        qui sera utilisée pour déterminer la couleur de chaque case dans la grille. <br>
+        La fonction est appelée avec les indices de ligne i et de colonne j à chaque boucle <br>
+        Une fois que la couleur de la case est obtenue grâce à la fonction, 
+        la classe correspondante est ajoutée à la cellule.
       </li>
       <li>
         <h3>
-          Définissez enfin une fonction diagonalColor dont le seul argument est un booléen, et telle que l'appel à makeSquare(size, id, diagonalColor(true)) transformera la table d'identifiant id en une grille dont la diagonale sera marron, tandis que l'appel à makeSquare(size, id, diagonalColor(false)) transformera cette table en une grille dont la diagonale n'aura pas de couleur particulière (par rapport aux autres cases de la grille).
+          Définissez enfin une fonction diagonalColor dont le seul argument est
+          un booléen, et telle que l'appel à makeSquare(size, id,
+          diagonalColor(true)) transformera la table d'identifiant id en une
+          grille dont la diagonale sera marron, tandis que l'appel à
+          makeSquare(size, id, diagonalColor(false)) transformera cette table en
+          une grille dont la diagonale n'aura pas de couleur particulière (par
+          rapport aux autres cases de la grille).
         </h3>
-        Reponse
+        <pre>
+          makeSquare(8, "table-3", diagonalColor(false));
+          makeSquare(3, "table-4", diagonalColor(true));
+          const makeSquare = function (size, id, diagonalColor) {
+            const table = document.getElementById(id);
+            for (let i = 0; i < size; i++) {
+              const row = document.createElement("tr");
+              for (let j = 0; j < size; j++) {
+                const cell = document.createElement("td");
+                cell.classList.add(diagonalColor(i, j));
+                row.appendChild(cell);
+              }
+              table.appendChild(row);
+            }
+          };
+
+          const diagonalColor = function (bool) {
+            return function (i, j) {
+              if (bool && i == j) {
+                return "brown";
+              } else {
+                return color(i, j);
+              }
+            };
+          };
+        </pre>
+        diagonalColor qui prend un booléen bool comme argument et retourne une fonction anonyme
+        qui prend deux paramètres, i et j, représentant les indices de ligne et de colonne de 
+        la cellule dans la grille. <br>
+        Si le booléen passé à diagonalColor est vrai et que les indices de ligne et de colonne 
+        (i et j) sont égaux, la fonction retourne la couleur "brown", indiquant que cette case 
+        est sur la diagonale et doit être marron. <br>
+        Sinon, la fonction appelle simplement la fonction color(i, j) pour déterminer la couleur 
+        de la case, en utilisant la logique habituelle pour un damier noir et blanc.
       </li>
     </ol>
   </body>
