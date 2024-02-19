@@ -14,32 +14,32 @@
         border: 1px solid black;
       }
 
-      td.noir {
+      td.black {
         background-color: black;
       }
 
-      td.blanc {
+      td.white {
         background-color: white;
       }
 
-      td.marron {
-        background-color: brown
+      td.brown {
+        background-color: brown;
       }
     </style>
     <script>
       "use strict";
       window.onload = function () {
-        makeCell("table-1");
+        makeCell("table-1", "black");
         makeLine(5, "table-2");
         makeSquare(8, "table-3", true);
         makeSquare(3, "table-4", false);
       };
 
-      const makeCell = function (id) {
+      const makeCell = function (id, color) {
         const table = document.getElementById(id);
         const row = document.createElement("tr");
         const cell = document.createElement("td");
-        cell.classList.add("noir")
+        cell.classList.add(color);
         row.appendChild(cell);
         table.appendChild(row);
       };
@@ -50,16 +50,16 @@
         for (let i = 0; i < nb; i++) {
           const cell = document.createElement("td");
           if (i % 2 == 0) {
-            cell.classList.add("noir")
-          }
+            cell.classList.add("black");
+          } 
           else if (i % 2 == 1) {
-            cell.classList.add("blanc")
+            cell.classList.add("white");
           }
           row.appendChild(cell);
         }
         table.appendChild(row);
       };
-/*
+      /*
       const makeSquare = function (size, id) {
         const table = document.getElementById(id);
         for (let i = 0; i < size; i++) {
@@ -86,19 +86,28 @@
           for (let j = 0; j < size; j++) {
             const cell = document.createElement("td");
             if (brown == true && i == j) {
-              cell.classList.add("marron")
-            }
+              cell.classList.add("brown");
+            } 
             else {
               if ((i + j) % 2 == 0) {
-                cell.classList.add("noir")
-              }
+                cell.classList.add("black");
+              } 
               else {
-                cell.classList.add("blanc")
+                cell.classList.add("white");
               }
             }
             row.appendChild(cell);
           }
           table.appendChild(row);
+        }
+      };
+
+      const color = function (i, j) {
+        if ((i + j) % 2 == 0) {
+          return "black";
+        } 
+        else {
+          return "white";
         }
       };
     </script>
