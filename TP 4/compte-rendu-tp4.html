@@ -25,12 +25,14 @@
         <h3>Recopiez la page Web exo1.html dans votre répertoire tp4.</h3>
         C'est fait !
         <h3>Que se passe-t-il lorsque l'on visualise la page ?</h3>
-        Lorsque on visualise la page, <i>Hello</i> est affiché dans la console.
+        Lors de la visualisation de la page, <i>Hello</i> est affiché dans la
+        console du navigateur.
         <h3>Comment fait-on pour ouvrir la console avec Firefox ?</h3>
-        Pour ouvrir la console avec Firefox, on fait clic droit puis on
-        selectionne, <i>inspecter</i>, ensuite on entre dans la <i>console</i>
+        Il est possible d'ouvrir la console de Firefox en effectuant un
+        <code>clic droit</code> puis en selectionnant <code>inspecter</code>, et
+        <code>console</code>
         <h3>Et avec Chrome ?</h3>
-        Même chose, il est de plus possible de rentrer le raccourci
+        Même chose, il est de plus possible d'y accéder avec le raccourci
         <code>CTRL + SHIFT + J</code>
       </li>
       <li>
@@ -41,9 +43,19 @@
           nombres de 0 à 2023 inclus (il n'est pas nécessaire de faire une
           fonction pour l'instant).
         </h3>
-        J'ai utiliser une boucle for qui va creer une variable i et qui va
-        l'incrementer de 1 a chaque fois jusqu'a ce qu'elle atteigne 2023,
-        ensuite on va afficher la variable a chaque incrementation.
+        <pre>
+          for (let a = 0; a &lt; 2024; a++) {
+            console.log(a)
+          }
+        </pre>
+        Une boucle for est utilisée avec une variable <code>a</code> initialisée
+        en 0. <br />
+        La boucle continuera à s'exécuter tant que la valeur de
+        <code>a</code> est inférieure à 2024. <br />
+        À chaque itération de la boucle, la valeur de <code>a</code> est
+        affichée dans la console. <br />
+        Après chaque itération, la valeur de <code>a</code> est incrémentée
+        grâce à <code>a++</code>.
       </li>
       <li>
         <h3>Mettez l'ancien code en commentaire.</h3>
@@ -53,9 +65,21 @@
           nombres divisibles par 2 ou par 3 allant de 0 à 2023 <br />
           inclus : 0, 2, 3, 4, 6, 8, …, 2018, 2019, 2020, 2022.
         </h3>
-        J'ai repris le code précédent, je lui ai ajouté une condition if,
-        verifiant si le reste de la division entre l'entier i et 2 ou 3 est égal
-        a 0 alors l'entier serait divisibles par 2 ou par 3 alors, on l'affiche.
+        <pre>
+          for (let a = 0; a &lt; 2024; a++) {
+            if (a % 2 == 0 || a % 3 == 0) {
+              console.log(a);
+            }
+          }
+        </pre>
+        La boucle est toujours utilisée avec la même structure et valeurs que
+        précédemment. <br />
+        Sauf que maintenant à chaque itération, une condition est ajoutée pour
+        vérifier si a est divisible par 2 ou par 3. <br />
+        Pour cela on utilise <code>modulo</code> pour vérifier si le reste de la
+        division de a par 2 ou par 3 est égal à zéro (ce qui signifie que a est
+        divisible par 2 ou par 3). <br />
+        Si la condition est vraie alors le nombre a est affiché dans la console.
       </li>
       <li>
         <h3>
@@ -63,21 +87,37 @@
           façon claire et intelligente) prenant un entier en paramètre et
           affichant sur la console les nombres divisibles par 2 ou par 3 allant
           de de 0 à cet entier (inclus). Puis écrivez un code de test de la
-          fonction avec les valeurs 7 et puis 10. Que se passe-t-il si on teste
-          la fonction avec la valeur -1 ?
+          fonction avec les valeurs 7 et puis 10.
         </h3>
-        Alors pour cette question, j'ai repris le code précédent je l'ai mis
-        dans une fonction que j'ai appelé MultipleDe2et3, car elle permet
-        d'avoir tout les multiples de 2 et 3 jusqu'a l'entier mis en parametre,
-        après avoir mis le code précédent dans une fonction, j'ai modifié la
-        condition de la boucle, et j'ai remplacé le 2024 par le parametre, ici
-        'int'
+        <pre>
+          const multiple_de_2_ou_3 = function(val) {
+            for (let a = 0; a &lt;= val; a++) {
+                if (a % 2 == 0 || a % 3 == 0) {
+                    console.log(a);
+                }
+            }
+        }
+       </pre
+        >
+        Le code de départ est maintenant dans une fonction nommée
+        multiple_de_2_ou_3. <br />
+        Cette fonction prend <code>val</code>, qui est l'entier jusqu'auquel
+        nous voulons afficher les nombres divisibles par 2 ou par 3. <br />
+        La boucle parcourt les nombres de 0 à val inclus. <br />
+        La condition vérifie si le nombre actuel est divisible par 2 ou par 3.
+        <br />
+        Si c'est le cas, le nombre est affiché dans la console.
+        <br />
+        <h3>Que se passe-t-il si on teste la fonction avec la valeur -1 ?</h3>
+        La fonction commence par exécuter la boucle de 0 à -1. <br />
+        Cependant, cela ne générera aucune itération car la condition a &lt;=
+        val ne sera jamais vraie puisque val est -1.
       </li>
     </ol>
     <h2>Exercice 2 : Damier</h2>
     <ol>
       <li>
-        <h3>Expliquez ce que fait la première ligne du script :</h3>
+        <h3>Expliquez ce que fait la première ligne du script</h3>
         La première ligne permet de se mettre en mode <code>strict</code> pour
         le restant du script ce qui permettra d'éviter les
         <i>erreurs silencieuses</i> du <code>JavaScript</code>
@@ -115,7 +155,7 @@
           const makeLine = function (nb, id) {
             const table = document.getElementById(id);
             const row = document.createElement("tr");
-            for (let i = 0; i < nb; i++) {
+            for (let i = 0; i &lt; nb; i++) {
               const cell = document.createElement("td");
               row.appendChild(cell);
             }
@@ -137,9 +177,9 @@
         <pre>
           const makeSquare = function (size, id) {
             const table = document.getElementById(id);
-            for (let i = 0; i < size; i++) {
+            for (let i = 0; i &lt; size; i++) {
               const row = document.createElement("tr");
-              for (let j = 0; j < size; j++) {
+              for (let j = 0; j &lt; size; j++) {
                 const cell = document.createElement("td");
                 row.appendChild(cell);
               }
@@ -190,7 +230,7 @@
           const makeLine = function (nb, id) {
             const table = document.getElementById(id);
             const row = document.createElement("tr");
-            for (let i = 0; i < nb; i++) {
+            for (let i = 0; i &lt; nb; i++) {
               const cell = document.createElement("td");
               if (i % 2 == 0) {
                 cell.classList.add("noir")
@@ -205,9 +245,9 @@
     
           const makeSquare = function (size, id) {
             const table = document.getElementById(id);
-            for (let i = 0; i < size; i++) {
+            for (let i = 0; i &lt; size; i++) {
               const row = document.createElement("tr");
-              for (let j = 0; j < size; j++) {
+              for (let j = 0; j &lt; size; j++) {
                 const cell = document.createElement("td");
                 if ((i + j) % 2 == 0) {
                 cell.classList.add("noir")
@@ -244,9 +284,9 @@
         <pre>
           const makeSquare = function (size, id, brown) {
             const table = document.getElementById(id);
-            for (let i = 0; i < size; i++) {
+            for (let i = 0; i &lt; size; i++) {
               const row = document.createElement("tr");
-              for (let j = 0; j < size; j++) {
+              for (let j = 0; j &lt; size; j++) {
                 const cell = document.createElement("td");
                 if (brown == true && i == j) {
                   cell.classList.add("marron")
@@ -269,7 +309,8 @@
         l'apparition ou non de la diagonale marron <br />
         Avec cette nouvelle fonction, si <code>brown</code> est vrai et que les
         deux boucles se trouvent à la même indice alors la classe marron est
-        ajoutée sinon ça sera la classe <code>noir</code> ou <code>blanc</code> qui sera ajoutée
+        ajoutée sinon ça sera la classe <code>noir</code> ou
+        <code>blanc</code> qui sera ajoutée
       </li>
       <li>
         <h3>
@@ -351,9 +392,9 @@
         <pre>
           const makeSquare = function (size, id, color) {
             const table = document.getElementById(id);
-            for (let i = 0; i < size; i++) {
+            for (let i = 0; i &lt; size; i++) {
               const row = document.createElement("tr");
-              for (let j = 0; j < size; j++) {
+              for (let j = 0; j &lt; size; j++) {
                 const cell = document.createElement("td");
                 cell.classList.add(color(i, j));
                 row.appendChild(cell);
@@ -362,11 +403,12 @@
             }
           };
         </pre>
-        Le troisième argument est désormais la fonction color 
-        qui sera utilisée pour déterminer la couleur de chaque case dans la grille. <br>
-        La fonction est appelée avec les indices de ligne i et de colonne j à chaque boucle <br>
-        Une fois que la couleur de la case est obtenue grâce à la fonction, 
-        la classe correspondante est ajoutée à la cellule.
+        Le troisième argument est désormais la fonction color qui sera utilisée
+        pour déterminer la couleur de chaque case dans la grille. <br />
+        La fonction est appelée avec les indices de ligne i et de colonne j à
+        chaque boucle <br />
+        Une fois que la couleur de la case est obtenue grâce à la fonction, la
+        classe correspondante est ajoutée à la cellule.
       </li>
       <li>
         <h3>
@@ -383,9 +425,9 @@
           makeSquare(3, "table-4", diagonalColor(true));
           const makeSquare = function (size, id, diagonalColor) {
             const table = document.getElementById(id);
-            for (let i = 0; i < size; i++) {
+            for (let i = 0; i &lt; size; i++) {
               const row = document.createElement("tr");
-              for (let j = 0; j < size; j++) {
+              for (let j = 0; j &lt; size; j++) {
                 const cell = document.createElement("td");
                 cell.classList.add(diagonalColor(i, j));
                 row.appendChild(cell);
@@ -404,14 +446,16 @@
             };
           };
         </pre>
-        diagonalColor qui prend un booléen bool comme argument et retourne une fonction anonyme
-        qui prend deux paramètres, i et j, représentant les indices de ligne et de colonne de 
-        la cellule dans la grille. <br>
-        Si le booléen passé à diagonalColor est vrai et que les indices de ligne et de colonne 
-        (i et j) sont égaux, la fonction retourne la couleur "brown", indiquant que cette case 
-        est sur la diagonale et doit être marron. <br>
-        Sinon, la fonction appelle simplement la fonction color(i, j) pour déterminer la couleur 
-        de la case, en utilisant la logique habituelle pour un damier noir et blanc.
+        diagonalColor qui prend un booléen bool comme argument et retourne une
+        fonction anonyme qui prend deux paramètres, i et j, représentant les
+        indices de ligne et de colonne de la cellule dans la grille. <br />
+        Si le booléen passé à diagonalColor est vrai et que les indices de ligne
+        et de colonne (i et j) sont égaux, la fonction retourne la couleur
+        "brown", indiquant que cette case est sur la diagonale et doit être
+        marron. <br />
+        Sinon, la fonction appelle simplement la fonction color(i, j) pour
+        déterminer la couleur de la case, en utilisant la logique habituelle
+        pour un damier noir et blanc.
       </li>
     </ol>
   </body>
