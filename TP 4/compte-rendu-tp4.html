@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Compte-rendu de TP2</title>
-    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet">
   </head>
   <body>
     <h1 class="centered">Compte-rendu de TP4</h1>
     <div class="right">
       <p>
-        Yacine HAMADOUCHE <br />
+        Yacine HAMADOUCHE <br>
         Gavau--Pelissier Liam
       </p>
     </div>
@@ -49,11 +48,11 @@
           }
         </pre>
         Une boucle for est utilisée avec une variable <code>a</code> initialisée
-        en 0. <br />
+        en 0. <br>
         La boucle continuera à s'exécuter tant que la valeur de
-        <code>a</code> est inférieure à 2024. <br />
+        <code>a</code> est inférieure à 2024. <br>
         À chaque itération de la boucle, la valeur de <code>a</code> est
-        affichée dans la console. <br />
+        affichée dans la console. <br>
         Après chaque itération, la valeur de <code>a</code> est incrémentée
         grâce à <code>a++</code>.
       </li>
@@ -62,7 +61,7 @@
         C'est fait !
         <h3>
           Réécrivez un nouveau code code pour afficher dans la console les
-          nombres divisibles par 2 ou par 3 allant de 0 à 2023 <br />
+          nombres divisibles par 2 ou par 3 allant de 0 à 2023 <br>
           inclus : 0, 2, 3, 4, 6, 8, …, 2018, 2019, 2020, 2022.
         </h3>
         <pre>
@@ -73,12 +72,12 @@
           }
         </pre>
         La boucle est toujours utilisée avec la même structure et valeurs que
-        précédemment. <br />
+        précédemment. <br>
         Sauf que maintenant à chaque itération, une condition est ajoutée pour
-        vérifier si a est divisible par 2 ou par 3. <br />
+        vérifier si a est divisible par 2 ou par 3. <br>
         Pour cela on utilise <code>modulo</code> pour vérifier si le reste de la
         division de a par 2 ou par 3 est égal à zéro (ce qui signifie que a est
-        divisible par 2 ou par 3). <br />
+        divisible par 2 ou par 3). <br>
         Si la condition est vraie alors le nombre a est affiché dans la console.
       </li>
       <li>
@@ -100,16 +99,16 @@
        </pre
         >
         Le code de départ est maintenant dans une fonction nommée
-        multiple_de_2_ou_3. <br />
+        multiple_de_2_ou_3. <br>
         Cette fonction prend <code>val</code>, qui est l'entier jusqu'auquel
-        nous voulons afficher les nombres divisibles par 2 ou par 3. <br />
-        La boucle parcourt les nombres de 0 à val inclus. <br />
+        nous voulons afficher les nombres divisibles par 2 ou par 3. <br>
+        La boucle parcourt les nombres de 0 à val inclus. <br>
         La condition vérifie si le nombre actuel est divisible par 2 ou par 3.
-        <br />
+        <br>
         Si c'est le cas, le nombre est affiché dans la console.
-        <br />
+        <br>
         <h3>Que se passe-t-il si on teste la fonction avec la valeur -1 ?</h3>
-        La fonction commence par exécuter la boucle de 0 à -1. <br />
+        La fonction commence par exécuter la boucle de 0 à -1. <br>
         Cependant, cela ne générera aucune itération car la condition a &lt;=
         val ne sera jamais vraie puisque val est -1.
       </li>
@@ -128,9 +127,9 @@
           élément, puis expliquer comment fonctionne la fonction makeCell.
         </h3>
         Pour ajouter un enfant à un élément parent nous utilisons
-        <code>.appendChild(element)</code> <br />
+        <code>.appendChild(element)</code> <br>
         Pour ajouter une classe nous utilisons cette fois
-        <code>.classList.add(element)</code> <br />
+        <code>.classList.add(element)</code> <br>
         <pre>
           const makeCell = function(id) 
           const table = document.getElementById(id);
@@ -140,9 +139,9 @@
           table.appendChild(row);
         </pre>
         La fonction makeCell va dans un premier temps récupérer l'élément grâce
-        à l'id donner en argument <br />
+        à l'id donner en argument <br>
         Ensuite celui-ci va créer à la suite respectivement une ligne et une
-        colonne <br />
+        colonne <br>
         Pour enfin ajouter la colonne à la ligne et la ligne à la table.
       </li>
       <li>
@@ -162,10 +161,10 @@
             table.appendChild(row);
           };
         </pre>
-        Cette fonction crée une nouvelle ligne, <br />
+        Cette fonction crée une nouvelle ligne, <br>
         Puis avec une boucle for, elle crée le nombre voulu de colonnes
-        &lt;td&gt; <br />
-        les attaches à la ligne. <br />
+        &lt;td&gt; <br>
+        les attaches à la ligne. <br>
         Enfin, elle attache la ligne à la table.
       </li>
       <li>
@@ -188,17 +187,17 @@
           };
         </pre>
         Cette fonction utilise deux boucles, une pour les lignes et une pour les
-        colonnes. <br />
+        colonnes. <br>
         Elle crée une nouvelle ligne pour chaque itération de la première boucle
-        <br />
+        <br>
         Puis à l'intérieur de cette boucle, elle crée le nombre spécifié de
-        cellules et les attache à la ligne. <br />
+        cellules et les attache à la ligne. <br>
         Enfin, elle attache la ligne à la table.
       </li>
       <li>
         <h3>
           Vérifiez que la table d'identifiant "table-4" est maintenant un
-          tableau de trois lignes et trois colonnes. <br />
+          tableau de trois lignes et trois colonnes. <br>
           Si ce n'est pas le cas, reprenez la fonction précédente.
         </h3>
         C'est fait !
@@ -211,7 +210,7 @@
           blanche ou par une case noire).
         </h3>
         Deux nouvelles classes CSS ont été ajoutées <code>.noir</code> et
-        <code>.blanc</code>. <br />
+        <code>.blanc</code>. <br>
         Ces classes définissent le fond des cellules respectivement en noir et
         en blanc.
         <pre>
@@ -264,8 +263,8 @@
         Enfin pour <code>makeLine</code> et <code>makeSquare</code> les classes
         sont ajoutées en fonction de l'indice de la boucle grâce à
         <code>if (i % 2 == 0)</code> et <code> else if (i % 2 == 1)</code>.
-        <br />
-        Si celle-ci est pair la couleur sera noir sinon blanche. <br />
+        <br>
+        Si celle-ci est pair la couleur sera noir sinon blanche. <br>
         Ainsi pour <code>makeSquare</code> comme 2 boucles sont imbriqués entre
         elles nous prenons la somme des deux indices et vérifions si celle-ci
         est pair ou non : <code>if ((i + j) % 2 == 0)</code>;
@@ -280,7 +279,7 @@
         </h3>
         Une nouvelle classe CSS a été ajoutée pour les cellules marron
         <code>td.marron</code> qui permet de définir le fond des cellules en
-        marron <br />
+        marron <br>
         <pre>
           const makeSquare = function (size, id, brown) {
             const table = document.getElementById(id);
@@ -306,7 +305,7 @@
           };
         </pre>
         Un nouveau paramètre <code>brown</code> a été ajouté afin de d'actionner
-        l'apparition ou non de la diagonale marron <br />
+        l'apparition ou non de la diagonale marron <br>
         Avec cette nouvelle fonction, si <code>brown</code> est vrai et que les
         deux boucles se trouvent à la même indice alors la classe marron est
         ajoutée sinon ça sera la classe <code>noir</code> ou
@@ -334,7 +333,7 @@
         <h3>
           Faites en sorte que la fonction makeCell prenne un argument
           supplémentaire, qui sera la couleur (black, white ou brown) de la
-          case. <br />
+          case. <br>
           Par exemple, si j'appelle makeCell("table-1","brown"), on dessinera
           une case de classe "brown", qui aura vocation à être dessinée en
           marron comme indiqué dans les informations de style du document.
@@ -351,9 +350,9 @@
         </pre>
         Un deuxième paramètre <code>color</code> a été ajouté à la fonction
         <code>makeCell</code>. Cet argument représente la couleur de la case et
-        sera utilisé pour ajouter la classe correspondante à la cellule. <br />
+        sera utilisé pour ajouter la classe correspondante à la cellule. <br>
         La classe est ajoutée à la cellule en utilisant
-        <code>cell.classList.add(color)</code> <br />
+        <code>cell.classList.add(color)</code> <br>
       </li>
       <li>
         <h3>
@@ -382,7 +381,7 @@
           dessiner, le troisième argument que prend cette fonction soit non plus
           un booléen qui dira si on doit peindre (ou non) en marron la diagonale
           de la grille, mais une fonction d'affichage qui associera à paire
-          (i,j) la couleur de la case en ligne i et colonne j. <br />
+          (i,j) la couleur de la case en ligne i et colonne j. <br>
           Notez que dans cette question, la fonction makeSquare prend en
           troisième argument une fonction, comme la fonction doItTwice vue en
           cours. Par exemple, si j'appelle makeSquare(3, "table-4", color), où
@@ -404,9 +403,9 @@
           };
         </pre>
         Le troisième argument est désormais la fonction color qui sera utilisée
-        pour déterminer la couleur de chaque case dans la grille. <br />
+        pour déterminer la couleur de chaque case dans la grille. <br>
         La fonction est appelée avec les indices de ligne i et de colonne j à
-        chaque boucle <br />
+        chaque boucle <br>
         Une fois que la couleur de la case est obtenue grâce à la fonction, la
         classe correspondante est ajoutée à la cellule.
       </li>
@@ -448,11 +447,11 @@
         </pre>
         diagonalColor qui prend un booléen bool comme argument et retourne une
         fonction anonyme qui prend deux paramètres, i et j, représentant les
-        indices de ligne et de colonne de la cellule dans la grille. <br />
+        indices de ligne et de colonne de la cellule dans la grille. <br>
         Si le booléen passé à diagonalColor est vrai et que les indices de ligne
         et de colonne (i et j) sont égaux, la fonction retourne la couleur
         "brown", indiquant que cette case est sur la diagonale et doit être
-        marron. <br />
+        marron. <br>
         Sinon, la fonction appelle simplement la fonction color(i, j) pour
         déterminer la couleur de la case, en utilisant la logique habituelle
         pour un damier noir et blanc.
