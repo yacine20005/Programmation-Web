@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Compte-rendu de TP5</title>
+    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="centered">Compte-rendu de TP5</h1>
+    <div class="right">
+      <p>Yacine HAMADOUCHE <br /></p>
+    </div>
+    <h2>Exercice 1 : Tableaux</h2>
+    <ol>
+      <li>
+        <h3>
+          Recopiez la page Web exo1.html dans votre répertoire tp5. <br>
+          Expliquez ce que fait le code sans pour autant regarder le code de graph.js. <br>
+          Note : pour tester, vous devez récupérer aussi le fichier graph.js et le placer correctement par rapport au fichier exo1.html que vous venez de récupérer (Une piste pour le trouver : regarder la source…)
+        </h3>
+        Le code affiche plusieurs textes dans des box sur la page web, et un graphique est affiché sous le texte <i>Simple Array</i>.
+      </li>
+      <li>
+        <h3>
+          La suite de cet exercice consiste à compléter chaque question en écrivant un code à l'endroit des 'TODO'. <br>
+          On cherche à écrire une fonction addThree qui prend en paramètre un tableau et retourne un nouveau tableau qui contient le même nombre de cases que le tableau pris en paramètre et dont la valeur de chaque case est la valeur de la case de même index du tableau pris en paramètre augmentée de trois. <br>
+          Par exemple, si le tableau initial contient [11, 21, 5, -13, 2, 12, 19, 5], alors le résultat de l'appel à addThree doit être un nouveau tableau avec les valeurs [14, 24, 8, -10, 5, 15, 22, 8]. <br>
+          Si cela vous aide, vous pouvez dans un premier temps écrire l'algorithme en pseudo-code, puis dans un deuxième temps, transformez le pseudo-code en JavaScript. <br>
+          <b>Attention !</b> Votre fonction ne doit pas modifier le tableau d'origine.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          En fait, le code que l'on a écrit n'est pas très générique : si l'on doit ajouter 4 à chaque case ou alors multiplier la valeur des cases par 2, il faut dupliquer le code avec un copier/coller et changer l'opération à effectuer. <br>
+          Comme on n'est pas des barbares, on se dit que l'on pourrait réutiliser la même fonction pour tous ces cas. On va pour cela créer une fonction intermédiaire. <br>
+          Donc dans un premier temps, écrivez une fonction applyForEachElement qui prend deux arguments (un tableau et une fonction) et qui, pour chaque élément du tableau, appelle la fonction en lui donnant l'élement en guise de paramètre. <br>
+          Une fois que applyForEachElement marche, écrivez une nouvelle version de addThree, addThree2 qui va utiliser applyForEachElement, vérifiez que le résultat est identique. 
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Il y a toutes les chances que votre fonction applyForEachElement contienne une boucle for. Cependant, on peut éviter d'écrire cette boucle explicitement, en utilisant la méthode forEach sur un tableau : écrire la fonction applyForEachElement2 pour utiliser la méthode forEach, puis l'utiliser pour écrire une nouvelle version de addThree, nommée addThree3.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Que fait la méthode map si on l'appelle sur un tableau ? <br>
+          Comment peut-on l'utiliser pour écrire addThree ? <br>
+          Écrivez addThree en utilisant la méthode map et vérifiez que l'on obtient le même résultat que précédemment.
+        </h3>
+        .map() crée un tableau avec les résultats de l'appel d'une fonction sur chaque élément du tableau. <br>
+        On peut utiliser .map() pour addThree en appliquant à chaque élément du tableau une fonction ajoutant 3. <br>
+      </li>
+      <li>
+        <h3>
+          On souhaite afficher les valeurs du tableau trié en utilisant la méthode sort sur un tableau. <br>
+          Rappelez en quoi la méthode sort est différente des méthodes map et filter. <br>
+          Écrivez la fonction sortedArray qui renvoie un nouveau tableau avec les valeurs triées (Attention ! Le tableau pris en paramètre ne doit pas être modifié). <br>
+        </h3>
+      </li>
+    </ol>
+  </body>
+</html>
