@@ -57,14 +57,55 @@
           Comment peut-on l'utiliser pour écrire addThree ? <br>
           Écrivez addThree en utilisant la méthode map et vérifiez que l'on obtient le même résultat que précédemment.
         </h3>
-        .map() crée un tableau avec les résultats de l'appel d'une fonction sur chaque élément du tableau. <br>
-        On peut utiliser .map() pour addThree en appliquant à chaque élément du tableau une fonction ajoutant 3. <br>
+        <code>.map()</code> crée un tableau avec les résultats de l'appel d'une fonction appliqué sur chaque élément du tableau. <br>
+        On peut utiliser <code>.map()</code> pour addThree en appliquant à chaque élément du tableau une fonction ajoutant 3. <br>
       </li>
       <li>
         <h3>
           On souhaite afficher les valeurs du tableau trié en utilisant la méthode sort sur un tableau. <br>
           Rappelez en quoi la méthode sort est différente des méthodes map et filter. <br>
           Écrivez la fonction sortedArray qui renvoie un nouveau tableau avec les valeurs triées (Attention ! Le tableau pris en paramètre ne doit pas être modifié). <br>
+        </h3>
+        La méthode <code>.sort()</code> trie les éléments d'un tableau dans l'ordre croissant sans créer de nouveaux tableaux, tandis que <code>.map()</code> et <code>.filter()</code> créent un nouveau tableau. <br>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          On veut afficher les valeurs du tableau seulement si celles-ci sont positives ou nulles. <br>
+          Sachant que l'on peut utiliser la méthode filter sur un tableau, écrivez la fonction positiveArray qui renvoie un tableau ne contenant que les valeurs positives ou nulles du tableau pris en paramètre.
+        </h3>
+        C'est fait !
+      </li>
+    </ol>
+    <h2>
+      Exercice 2 : MinMax
+    </h2>
+    <ol>
+      <li>
+        <h3>
+          On cherche à écrire une fonction minmax qui prend en paramètre un tableau, calcule le minimum et le maximum de ce tableau et renvoie les deux valeurs sous forme d'un nouveau tableau à 2 cases dont la première case est le minimum et la seconde case est le maximum. <br>
+          Pour des questions d'efficacité, on veut que le calcul du minimum et du maximum soit fait lors du même parcours du tableau. <br>
+          Écrivez, dans un premier temps, l'algorithme que vous allez implanter en pseudo-code, puis écrivez le code JavaScript correspondant. <br>
+          Note : il existe les fonctions Math.min et Math.max.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Au lieu d'écrire la boucle à la main, on peut vouloir directement utiliser l'opérateur spread (…) pour calculer le minimum et le maximum du tableau. <br>
+          Écrivez le code de minmax2 qui utilise cet opérateur. Si l'on utilise cette fonction, combien de fois aura-t-on parcouru le tableau ? Cela satisfait-il les contraintes posées en début d'exercice ? <br>
+        </h3>
+        Si on utilise l'opérateur spread, on parcourt le tableau 2 fois, une fois pour min et une fois pour max. <br> 
+        Cela ne satisfait donc pas les contraintes posées par l'exercice.
+      </li>
+      <li>
+        <h3>
+          Une autre manière de procéder consiste à utiliser la méthode reduce sur un tableau qui permet d'effectuer un même calcul sur chaque valeur. <br>
+          Note : comme ici, on s'intéresse au maximum et au minimum en même temps, la valeur propagée devra contenir ces deux valeurs. <br>
+          Quelle doit être la valeur passée en second paramètre à reduce ? <br>
+          Quelle doit être la valeur propagée pour chaque case dans le cas où le tableau est [8, 2, 4, 0, 3, 9, 1, 5, 7, 6] ? <br>
+          Écrivez le code de minmax3 qui appelle la méthode reduce. <br>
+          Note 2 : vous pouvez vérifier que les valeurs intermédiaires de la valeur propagée sont bonnes avec console.log.
         </h3>
       </li>
     </ol>

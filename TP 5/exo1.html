@@ -18,8 +18,8 @@
         graph('graph3', addThree2(array));
         graph('graph4', addThree3(array));
         graph('graph5', addThree4(array));
-        //graph('graph6', sortedArray(array));
-        //graph('graph7', positiveArray(array));
+        graph('graph6', sortedArray(array));
+        graph('graph7', positiveArray(array));
       };
 
       const addThree = function (array) {
@@ -62,11 +62,13 @@
       };
 
       const sortedArray = function (array) {
-        //TODO
+        let list = array.sort((a, b) => a - b);
+        return list;
       };
 
       const positiveArray = function (array) {
-        //TODO
+        let list = array.filter((elem) => elem >= 0);
+        return list;
       };
     </script>
     <script src="graph.js" type="text/javascript"></script>
