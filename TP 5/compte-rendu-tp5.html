@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Compte-rendu de TP5</title>
-    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
-    />
+    >
   </head>
   <body>
     <h1 class="centered">Compte-rendu de TP5</h1>
     <div class="right">
-      <p>Yacine HAMADOUCHE <br /></p>
+      <p>Yacine HAMADOUCHE<br></p>
     </div>
     <h2>Exercice 1 : Tableaux</h2>
     <ol>
@@ -107,6 +107,52 @@
           Écrivez le code de minmax3 qui appelle la méthode reduce. <br>
           Note 2 : vous pouvez vérifier que les valeurs intermédiaires de la valeur propagée sont bonnes avec console.log.
         </h3>
+        Les valeurs passées en paramètres à <code>.reduce()</code> doit être un tableau contenant le minimum et le maximum du tableau pour l'instant ainsi que la variable qui va contenir la valeur courante. <br>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          En fait, retourner un tableau avec 2 cases stockant le minimum et le maximum, n'est pas terrible comme convention, il faut mieux renvoyer un dictionnaire avec les clefs min et max. <br>
+          Donnez la syntaxe Javascript qui permet de créer un dictionnaire avec 3 comme valeur de min et 7 comme valeur de max. <br>
+          Enfin, écrivez la fonction minmax4 utilisant des dictionnaires comme valeur propagée à la place d'un tableau à 2 cases. <br>
+          Note : Si vous n'avez pas vu les dictionnaires en cours, vous êtes invités à lire le cours correspondant, mais vous pouvez aussi sauter cette question sans vous sentir trop coupables. <br>
+        </h3>
+        <pre>
+          let obj = {
+            min: 3,
+            max: 7
+          }
+        </pre>
+        C'est fait !
+      </li>
+    </ol>
+    <h2>
+      Exercice 3 : Génération aléatoire et calcul rapide
+    </h2>
+    <ol>
+      <li>
+        <h3>
+          On souhaite pouvoir mélanger les cases d'un tableau dans le but de tester plus de combinaisons. <br>
+          L'idée de l'algorithme de mélange est la suivante : pour chaque case i, on tire un nombre aléatoire entre i et n - 1 (n étant le nombre de cases du tableau) et l'on va permuter (échanger si vous préférez) la case courante avec la case à l'index du nombre que l'on vient de tirer aléatoirement. <br>
+          Si l'on fait cela pour toutes les cases, le tableau sera mélangé (et on peut même s'offrir la joie de démontrer que ce tableau est bien échantillonné uniformément au hasard parmi tous les tableaux possibles). <br>
+          Écrivez dans un premier temps une fonction swap qui permet d'échanger deux cases du tableau. <br>
+          Puis écrivez la fonction randomArray qui mélange les valeurs du tableau pris en paramètre. <br>
+          Note : tirer un nombre aléatoire entre 0 (inclus) et n (exclu) en JavaScript se fait avec la fonction suivante : <br>
+          <code>
+            const random = n => Math.floor(n * Math.random());
+          </code>
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Il est possible de diminuer le nombre de tests fait par la fonction minmax. En effet, si au lieu de faire évoluer le min et le max pour chaque case du tableau, on commence par lire deux valeurs de cases consécutives, regarder quelle est la plus grande puis la comparer avec le max, dans ce cas, la valeur la plus petite ne doit être comparée qu'avec le min donc chaque case n'a pas besoin d'être comparée et avec le max et avec le min. <br>
+          Écrivez dans un premier temps l'algorithme en pseudo-code. <br>
+          Note : pour éviter de dupliquer le code, on peut écrire le code si une valeur est plus grande que l'autre et dans l'autre cas, permuter les valeurs (attention, les valeurs, pas les cases du tableau) pour se retrouver dans le même cas. <br>
+          Vérifiez que votre algo fonctionne que le nombre de cases soit pair ou impair. <br>
+          Enfin, écrivez la fonction minmax5. <br>
+        </h3>
+        C'est fait !
       </li>
     </ol>
   </body>

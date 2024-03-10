@@ -23,11 +23,11 @@
         // Q1
         show("minmax-1",minmax);
         // Q2
-         show("minmax-2",minmax2);
+        show("minmax-2",minmax2);
         // Q3
-        // show("minmax-3",minmax3);
+        show("minmax-3",minmax3);
         // Q4
-        // showDico("minmax-4",minmax4);
+        showDico("minmax-4",minmax4);
       };
       
       const minmax = function(array) {
@@ -42,7 +42,7 @@
             }
         }
         return [min, max];
-}
+      }
       
       const minmax2 = function(array) {
         let min = Math.min(...array);
@@ -51,12 +51,40 @@
       };
       
       const minmax3 = function(array) {
-        //TODO
+        let minmax = [array[0], array[0]];
+        minmax = array.reduce(function (minmax, val) {
+          console.log(`minmax: ${minmax[0]} , ${minmax[1]} val: ${val}`);
+          if (val > minmax[1]) {
+            minmax[1] = val;
+          }
+          if (val < minmax[0]) {
+            minmax[0] = val;
+          }
+          return minmax;
+        }, minmax);
+        return minmax;
       };
       
+      let obj = {
+        min: 3,
+        max: 7
+      }
+
       const minmax4 = function(array) {
-        //TODO
+        let obj = {min: 3, max: 7}
+        obj = array.reduce(function (obj, val) {
+          console.log(`minmax: ${obj.min} , ${obj.max} val: ${val}`);
+          if (val > obj.max) {
+            obj.max = val;
+          }
+          if (val < obj.min) {
+            obj.min = val;
+          }
+          return obj;
+        }, obj);
+        return obj;
       };
+
    </script>
  </head>
  <body>

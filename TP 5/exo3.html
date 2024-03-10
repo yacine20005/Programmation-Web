@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Exercice 3</title>
+   <script>
+      "use strict";
+      const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+      const random = n => Math.floor(n * Math.random());
+      
+      const show = function(id, fun) {
+        const minMax = fun(array);
+        const elt = document.getElementById(id);
+        elt.innerText = "min " + minMax[0] + " max " + minMax[1];
+      };
+      
+      window.onload = function() {
+        randomArray(array);
+        const line = document.getElementById('line');
+        // line.innerHTML = array;
+        show("minmax-5",minmax5);
+    }
+      
+    const swap = function(array, i, j) {
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    };
+      
+    
+      const randomArray = function(array) {
+        for (let index = 0; index < array.length; index++) {
+            let madmax = random(array.length);
+            swap(array, index, madmax);
+        }
+        console.log(array);
+        return array
+      }
+      
+      const minmax5 = function(array) {
+        let obj = {min: array[0], max: array[0]};
+        for (let i = 1; i < array.length; i += 2) {
+            if (i + 1 == array.length) {
+                i = i - 1
+            }
+            console.log(obj)
+            if (array[i] > array[i + 1]) {
+                swap(array, i, i + 1);
+            }
+            if (array[i] < obj.min) {
+                obj.min = array[i];
+            }
+            if (array[i + 1] > obj.max) {
+                obj.max = array[i + 1];
+            }
+        }
+        return [obj.min, obj.max];
+      };
+   </script>
+ </head>
+ <body>
+  <h2>Random Array</h2>
+  <p id="line"></p>
+  <h2>Min/Max 5: Fury Road</h2>
+  <p id="minmax-5">
+ </body>
+</html>
