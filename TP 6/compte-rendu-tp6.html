@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Compte-rendu de TP6</title>
+    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="centered">Compte-rendu de TP6</h1>
+    <div class="right">
+      <p>Yacine HAMADOUCHE<br /></p>
+    </div>
+    <h2>Exercice 1 : Memory</h2>
+    <ol>
+      <li>
+        <h3>
+          Recopiez l'ensemble des ressources, c'est-à-dire, la page Web
+          memory.html, le fichier JavaScript memory.js ainsi que les images dans
+          votre répertoire tp6.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          À quoi sert la fonction constructor ? <br />
+          À quel moment est-elle appelée dans le script memory.html ?
+        </h3>
+        La fonction constructor sert à initialiser les variables et les méthodes
+        notamment à l'aide de <code>images,blank</code> pour
+        <code>MemoryGame</code>. <br />
+        Le constructor est initialisé au début du script de
+        <code>memory.html</code> <br />
+        Elle est appelée dans le script memory.html au moment où on initialise
+        la variable <code>game</code>
+      </li>
+      <li>
+        <h3>
+          Écrivez le code du constructeur de la classe MemoryGame pour stocker
+          le tableau des images et l'image de dos de carte. <br />
+          Écrivez ensuite le code de la méthode build afin que le nombre
+          d'images soit affiché à l'intérieur de la balise div prise en
+          paramètre. <br />
+          Note : les élements du DOM possèdent un attribut innerHTML. <br />
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Pour notre jeu de memory, nous allons créer des paires de cartes, une
+          paire par image. Pour stocker ces cartes, on va créer un tableau cards
+          qui va contenir pour chaque carte l'index de l'image correspondante.
+          <br />
+          Dans un vrai memory, ce tableau des index des images est permuté lors
+          de la création du jeu ; sinon, ce n'est pas très drole. Pour
+          l'instant, nous allons utiliser la fonction shuffleCards qui vous a
+          été donnée car cela sera plus facile pour la mise au point du
+          programme. <br />
+          Que fait la fonction shuffleCards, et en quoi cela aide-t-il pour la
+          mise au point du programme ?
+        </h3>
+        La fonction <code>shuffleCards</code> permet pour l'instant de créer un
+        tableau contenant des paires d'entiers entre 0 et
+        <code>lenght</code> dans l'ordre. <br />
+        Cependant cela aide pour la mise au point du programme car cela permet
+        de vérifier si les images sont bien géré par le code et il suffira juste
+        de faire en sorte de mélanger les valeurs du tableau pour que le jeu
+        soit prêt à être jouable.
+      </li>
+      <li>
+        <h3>
+          Modifiez le constructeur de la classe MemoryGame pour que la classe
+          contienne également un tableau positionsCartes fourni par la fonction
+          shuffleCards. Modifiez ensuite la méthode build pour afficher autant
+          de cartes que de cases du tableau cards qu'a renvoyé la fonction
+          shuffleCards (ici, 16 cartes). Chaque carte sera représentée par un
+          div contenant une image (voir le CSS de memory.html). Pour l'instant,
+          chaque carte affichera le même dos d'image. <br />
+          Rappel : l'élement DOM correspondant à une image possède une propriété
+          src.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          On souhaite ajouter une fonction permettant de savoir lorsque
+          l'utilisateur a cliqué sur une carte. <br />
+          Note : tout élément est muni d'une fonction onclick qui permet
+          d'exécuter une fonction quand on clique sur la zone correspondant à
+          cette balise. Le code JavaScript à utiliser pour munir un élément elt
+          d'une fonction fun() ou bien fun(event) qui sera déclenchée lors d'un
+          clic sera alors. <br />
+          Lorsqu'on utilise cette syntaxe, le sens du mot-clé this dans la
+          function fun est différent si elle a été définie avec la syntaxe
+          normale ou avec une notation flèche. Quelle est la différence ? <br />
+          Comment faire pour savoir sur quelle carte un utilisateur a cliqué ?
+          <br />
+          Implémentez la solution retenue pour que, lorsque l'on clique sur une
+          carte, son index dans le tableau des cartes (entre 0 inclus et 16
+          exclus) et le numéro de carte correspondante (entre 0 inclus et 8
+          exclus) soient affichés dans la console du nagivateur.
+        </h3>
+        La différence entre les deux syntaxes est qu'avec la syntaxe
+        <b>fléché</b>, <code>this</code> est défini à l'extérieur de la
+        fonction, tandis qu'avec la syntaxe <b>normale</b>,
+        <code>this</code> est défini à l'intérieur de la fonction et finira par
+        être <i>undefined</i>. <br />
+        <b
+          >TODO : Récupérer d'une facon ou d'une autre l'id de la carte cliquée
+          et le numéro de la carte correspondante. <br />
+        </b>
+      </li>
+      <li>
+        <h3></h3>
+      </li>
+    </ol>
+  </body>
+</html>
