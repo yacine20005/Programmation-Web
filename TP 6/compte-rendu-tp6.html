@@ -110,13 +110,44 @@
         fonction, tandis qu'avec la syntaxe <b>normale</b>,
         <code>this</code> est défini à l'intérieur de la fonction et finira par
         être <i>undefined</i>. <br />
-        <b
-          >TODO : Récupérer d'une facon ou d'une autre l'id de la carte cliquée
-          et le numéro de la carte correspondante. <br />
-        </b>
+        Pour savoir sur quelle carte l'utilisateur a cliqué, on veille à ce que lorsque l'image est générée,
+        on lui attribue un <code>id</code> qui sera incrémente à chaque fois et
+        on récupère la variable élement. <br />
       </li>
       <li>
-        <h3></h3>
+        <h3>
+          On souhaite maintenant pouvoir afficher l'image correspondant à une carte lorsque l'on clique sur la carte. <br>
+          Comme le tableau des images est stocké dans un objet MemoryGame, il est important que cet objet soit accessible à la fonction 
+          qui est exécutée lors d'un clic. <br>
+          Comment faire pour que le tableau des images soit accessible lors d'un clic ? <br>
+          Implémentez votre solution pour que, lorsque l'on clique sur une carte, l'image correspondante s'affiche. <br>
+        </h3>
+        Pour que le tableau des images soit accessible lors d'un clic, on veille à ce que le tableau soit déclarée dans la classe 
+        <code>MemoryGame</code> et qu'on utilise <code>this</code> pour y accéder. <br>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Il faut maintenant implanter la mécanique du jeu. <br>
+          Comme on découvre les cartes, une par une, il faut se souvenir de la carte précédente (si elle existe) 
+          pour savoir si le jeu est dans l'un des états suivants : <br>
+          <ul>
+            <li>
+              on doit découvrir 2 cartes ;
+            </li>
+            <li>
+              on doit découvrir 1 carte (l'autre est déjà connue) ;
+            </li>
+            <li>
+              deux cartes ont été découvertes.
+            </li>
+          </ul>
+          Sachant que l'on appelle <code>selection</code> la carte dont on se souvient, écrivez en pseudo-code l'algorithme qui prend en
+          paramètre la carte sur laquelle on vient de cliquer et qui implante la mécanique de jeu.
+          Implantez ensuite votre algorithme en JavaScript.
+          Comment faire pour ne pas prendre en compte les cartes déjà retournées (il y a deux cas) ?
+          Modifiez votre programme en conséquence.
+        </h3>
       </li>
     </ol>
   </body>

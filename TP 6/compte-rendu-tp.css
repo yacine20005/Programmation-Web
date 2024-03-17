@@ -64,6 +64,10 @@ tr:hover {
     background-color:#1c780c;
 }
 
-li {
+ol li {
     list-style-type: lower-roman;
+}
+
+ul li {
+    list-style-type: disc;
 }
