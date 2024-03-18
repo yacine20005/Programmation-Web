@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Compte-rendu de TP7</title>
+    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="centered">Compte-rendu de TP7</h1>
+    <div class="right">
+      <p>Yacine HAMADOUCHE<br /></p>
+    </div>
+    <h2>Exercice 1  On s'arrête et on réfléchit</h2>
+    <ol>
+      <li>
+        <h3>
+          En prévision du TP 8 qui sera noté, reprenez les TPs précédents, terminez-les si nécessaire, 
+          identifiez les points qui vous ont posé des problèmes et interrogez vos chargés de TPs à leur 
+          sujet.
+        </h3>
+        C'est fait !
+      </li>
+    </ol>
+    <h2>
+      Exercice 2 : Horloge
+    </h2>
+    <ol>
+      <li>
+        <h3>
+          Recopiez la page Web exo2.html. <br>
+          Que se passe-t-il lorsque l'on la visualise ? <br>
+          Note : regardez la console ! <br>
+          Expliquez ce que fait la commande window.onload = function() { ... };. <br>
+        </h3>
+        C'est fait ! <br>
+        Lorsque l'on visualise la page Web exo2.html, on voit que la 
+        console affiche <i>tick !</i> 1 seconde après le chargement de la page. <br>
+        La commande window.onload = function() { ... }; permet d'attendre le 
+        chargement de la page pour effectuer une action. <br> 
+      </li>
+      <li>
+        <h3>
+          Que fait la fonction refresh ? <br>
+          Comment faire pour afficher un « tick » toutes 
+          les secondes en utilisant cette fonction ? <br>
+          Note : Il y aura sans doute un compteur à observer 
+          dans la console qui indiquera le nombre de 'tick !' affichés. <br>
+        </h3>
+        La fonction <code>refresh</code> est une fonction récursive qui affiche
+        <i>tick !</i> toutes les secondes. <br>
+        Pour afficher <i>tick ! </i> toutes les secondes en utilisant cette fonction,
+        il suffit de remplacer la fonction <code>loaded</code> dans <code>window.onload</code> 
+        par <code>refresh</code>.
+      </li>
+      <li>
+        <h3>
+          En fait, il existe un appel window.setInterval() qui va appeler la fonction prise en
+          paramètre de façon répétée. Transformez le code pour utiliser window.setInterval().
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          On souhaite afficher la date et l'heure au lieu des "tick !". <br>
+          Transformez le code pour afficher la date courante dans la console. <br>
+          On pourra ici créer un objet Date avec la commande new Date(). <br>
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Changez encore le code pour afficher uniquement l'heure (méthode getHours() <br>
+          de la classe Date), les minutes (getMinutes()) et les secondes (getSeconds()) <br>
+          sur la console. <br>
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Retirez les commentaires avant l'appel de la fonction drawOnCanvas dans le 
+          gestionnaire d'événements onload. <br>
+          Que produit cette fonction ? <br>
+        </h3>
+        La fonction <code>drawOnCanvas</code> produit une ligne horizontale sur la page.
+      </li>
+      <li>
+        <h3>
+          Après avoir repéré les dimensions du canvas, modifiez le code de la fonction
+          drawOnCanvas pour afficher une aiguille indiquant midi (ou 0 minute, ou 0 seconde). <br>
+          Note : l'origine de l'aiguille doit être au centre du canvas.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Modifiez la fonction drawOnCanvas pour qu'elle affiche un cercle de rayon 
+          220 pixels centré dans le canvas. Il servira de cadre à notre horloge. <br>
+          Faites en sorte que votre aiguille ne dépasse pas de ce cercle.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Déterminez les formules mathématiques qui permettent, pour une valeur de 0 à 60 secondes,
+          de trouver les coordonnées x et y du sommet de l'aiguille. <br>
+          Ajoutez une fonction fromPolar recevant en paramètres :
+          <ul>
+            <li>les coordonnées 'xc' et 'yc' de l'origine de l'aiguille,</li>
+            <li>la longueur 'radius' de l'aiguille,</li>
+            <li>un nombre de secondes 's' correspondant à la position de l'aiguille.</li>
+          </ul>
+          Cette fonction doit retourner la position (x,y) de l'extremité de l'aiguille.
+          Testez votre fonction en modifiant la fonction refresh.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Modifiez le code pour faire bouger la trotteuse (nom de l'aiguille des secondes) 
+          en fonction des secondes. <br>
+          Note : context.clearRect(...) permet d'effacer le canvas. <br>
+        </h3>
+        
+      </li>
+    </ol>
+  </body>
+</html>
