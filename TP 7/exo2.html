@@ -50,41 +50,52 @@
 
       const refresh_v6 = function () {
         window.setInterval(function () {
-          const canvas = document.getElementById("clock");
-          const context = canvas.getContext("2d");
-
-          context.beginPath();
-          context.arc(300, 300, 220, 0, 2 * Math.PI);
-          context.stroke();
-          context.beginPath();
-          context.moveTo(300, 300);
-          let array = fromPolar(300, 300, 220, 0);
-          context.lineTo(array[0], array[1]);
-          context.stroke();
+          let canvas = document.getElementById("clock");
+          let context = canvas.getContext("2d");
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          drawOnCanvas();
         }, 1000);
       };
 
       const drawOnCanvas = function () {
         const canvas = document.getElementById("clock");
         const context = canvas.getContext("2d");
-
         context.beginPath();
         context.arc(300, 300, 220, 0, 2 * Math.PI);
+        context.strokeStyle = "blue"; 
+        context.lineWidth = 4;
         context.stroke();
         context.beginPath();
         context.moveTo(300, 300);
-        let array = fromPolar(300, 300, 220, 0);
-        context.lineTo(array[0], array[1]);
+        let seconds = new Date().getSeconds();
+        let array_s = fromPolar_m(300, 300, 220, seconds);
+        context.lineTo(array_s[0], array_s[1]);
+        context.strokeStyle = "red";
+        context.lineWidth = 2;
+        context.stroke();
+        context.beginPath();
+        context.moveTo(300, 300);
+        let hours = new Date().getHours();
+        let array_h = fromPolar_m(300, 300, 220, hours);
+        context.lineTo(array_h[0], array_h[1]);
+        context.strokeStyle = "black";
+        context.lineWidth = 2;
         context.stroke();
       };
 
-      const fromPolar = function (xc, yc, radius, s) {
+      const fromPolar_m = function (xc, yc, radius, s) {
         let x = xc + radius * Math.cos((s * Math.PI) / 30 - Math.PI / 2);
         let y = yc + radius * Math.sin((s * Math.PI) / 30 - Math.PI / 2);
         return [x, y];
       };
 
-      refresh_v5();
+      const fromPolar_h = function (xc, yc, radius, h) {
+        let x = xc + radius * Math.cos((s * Math.PI) / 30 - Math.PI / 2);
+        let y = yc + radius * Math.sin((s * Math.PI) / 30 - Math.PI / 2);
+        return [x, y];
+      };
+
+      refresh_v6();
     </script>
   </head>
   <body>
