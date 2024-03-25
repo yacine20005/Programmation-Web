@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="utf-8" />
     <title>My first clock</title>
@@ -50,18 +50,20 @@
 
       const refresh_v6 = function () {
         window.setInterval(function () {
-          const canvas = document.getElementById("clock");
-          const context = canvas.getContext("2d");
-
-          context.beginPath();
-          context.arc(300, 300, 220, 0, 2 * Math.PI);
-          context.stroke();
-          context.beginPath();
-          context.moveTo(300, 300);
-          let array = fromPolar(300, 300, 220, 0);
-          context.lineTo(array[0], array[1]);
-          context.stroke();
+          let canvas = document.getElementById("clock");
+          let context = canvas.getContext("2d");
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          drawOnCanvas();
         }, 1000);
+      };
+
+      const drawLine = function (x, y, color, lineWidth, context) {
+        context.beginPath();
+        context.moveTo(300, 300);
+        context.lineTo(x, y);
+        context.strokeStyle = color;
+        context.lineWidth = lineWidth;
+        context.stroke();
       };
 
       const drawOnCanvas = function () {
@@ -70,21 +72,36 @@
 
         context.beginPath();
         context.arc(300, 300, 220, 0, 2 * Math.PI);
+        context.strokeStyle = "blue";
+        context.lineWidth = 4;
         context.stroke();
-        context.beginPath();
-        context.moveTo(300, 300);
-        let array = fromPolar(300, 300, 220, 0);
-        context.lineTo(array[0], array[1]);
-        context.stroke();
+
+        let seconds = new Date().getSeconds();
+        let array_s = fromPolar(300, 300, 200, seconds);
+        drawLine(array_s[0], array_s[1], "red", 2, context);
+
+        let minutes = new Date().getMinutes();
+        let array_m = fromPolar(300, 300, 150, minutes);
+        drawLine(array_m[0], array_m[1], "green", 3, context);
+
+        let hours = new Date().getHours();
+        let array_h = fromPolar_h(300, 300, 100, hours);
+        drawLine(array_h[0], array_h[1], "black", 4, context);
       };
 
-      const fromPolar = function (xc, yc, radius, s) {
-        let x = xc + radius * Math.cos((s * Math.PI) / 30 - Math.PI / 2);
-        let y = yc + radius * Math.sin((s * Math.PI) / 30 - Math.PI / 2);
+      const fromPolar = function (xc, yc, radius, m) {
+        let x = xc + radius * Math.cos((m * Math.PI) / 30 - Math.PI / 2);
+        let y = yc + radius * Math.sin((m * Math.PI) / 30 - Math.PI / 2);
         return [x, y];
       };
 
-      refresh_v5();
+      const fromPolar_h = function (xc, yc, radius, h) {
+        let x = xc + radius * Math.cos((h * Math.PI) / 6 - Math.PI / 2);
+        let y = yc + radius * Math.sin((h * Math.PI) / 6 - Math.PI / 2);
+        return [x, y];
+      };
+
+      refresh_v6();
     </script>
   </head>
   <body>
