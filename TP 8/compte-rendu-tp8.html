@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Compte-rendu de TP8</title>
+    <link rel="stylesheet" type="text/css" href="compte-rendu-tp.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="centered">Compte-rendu de TP8</h1>
+    <div class="right">
+      <p>Yacine HAMADOUCHE<br /></p>
+    </div>
+    <h2>Exercice 1 : Un panier de fruits</h2>
+    <ol>
+      <li>
+        <h3>
+          Recopiez les fichiers exo1.html, basket.js, fruitQuantities.json et
+          HTTPServer.py dans votre répertoire tp8. Dans la suite, vous devrez
+          uniquement modifier le code Javascript de basket.js.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          On cherche à écrire une requête AJAX qui va lire le fichier
+          fruitQuantities.json. <br />
+          Créez un objet XMLHttpRequest, utilisez la méthode open() pour créer
+          une requête sur le fichier fruitQuantities.json stocké sur le serveur
+          du cours (et non pas celui que vous avez copié localement), puis
+          envoyez la requête au serveur avec la méthode send. <br />
+          Comment faire pour savoir si la requête a réussi ou échoué en
+          utilisant les outils de développement de votre navigateur ? <br />
+          Testez si votre requête AJAX fonctionne avec Firefox et avec Chrome.
+          <br />
+        </h3>
+        <pre>
+          const ajax = new XMLHttpRequest();
+          ajax.onreadystatechange = function() {
+              console.log(ajax.readyState + ':' + ajax.status + ':' + ajax.responseText);
+          }
+          ajax.open("GET", "https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td08/fruitQuantities.json", true);
+          ajax.send();
+        </pre>
+        Pour créer l'objet XMLHttpRequest, on a utilisé
+        <code>const ajax = new XMLHttpRequest();</code> <br />
+        On a ensuite défini une requête sur fruitQuantities.json en utilisant
+        l'url avec
+        <code
+          >ajax.open("GET",
+          "https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td08/fruitQuantities.json",
+          true);</code
+        >
+        <br />
+        Pour ensuite envoyer la requête au serveur avec
+        <code>ajax.send();</code> <br />
+        <b>A VERIFIER</b> : Pour savoir si la requête a réussi ou échoué, on a
+        utilisé la fonction <code>ajax.onreadystatechange</code> <br />
+        On peut aussi accéder au panel <i>Réseau</i> du navigateur pour bien
+        vérifier si le fruitQuantities.json est bien présent
+      </li>
+      <li>
+        <h3>
+          Que se passe-t-il si vous essayez d'envoyer une requête pour récupérer
+          une copie locale du fichier fruitQuantities.json ? Si vous avez un
+          message d'erreur, comment pouvez-vous expliquer le contenu de ce
+          message d'erreur ?
+        </h3>
+        <pre>
+          ajax.open("GET", "fruitQuantities.json", true)
+        </pre>
+        En remplacant l'url dans la méthode open par le fichier locale
+        <i>fruitQuantities.json</i>, on obtient bien la version locale sans
+        messages d'erreurs.
+      </li>
+      <li>
+        <h3>
+          En fonction de votre navigateur et de la version de celui-ci, il est
+          probable que vous n'ayez pas pu accéder au fichier
+          fruitQuantities.json. Pour éviter que ce genre de mésaventures ne se
+          reproduise, vous allez lancer un serveur HTTP minimaliste sur votre
+          propre machine. (Lisez bien toute la question, y compris le paragraphe
+          qui commence par Attention, avant d'entamer les opérations qui
+          suivent).
+        </h3>
+        Fort heureusement, j'ai pu accéder au fichier sans avoir à lancer un
+        serveur HTTP.
+      </li>
+      <li>
+        <h3>
+          Ajoutez une fonction pour écouter les événements readystatechange et
+          si la requête a réussi, affichez le résultat de la propriété
+          responseText dans la console.
+        </h3>
+        <pre>
+          ajax.onreadystatechange = function() {
+            if (ajax.readyState === 4 && ajax.status === 200) {
+                console.log(ajax.responseText);
+            };
+        };
+        </pre>
+        On peut accéder à chaque changement d'état de la requête en utilisant la
+        fonction <code>ajax.onreadystatechange</code> Ensuite on vérifie si la
+        requêt est bien terminée et si le status est 200 qui veut dire que
+        l'opération est un succès pour afficher le résultat
+        <code>ajax.responseText</code> dans la console.
+      </li>
+      <li>
+        <h3>
+          Transformez la chaine de caractère stockée dans responseText au format
+          JSON en objet JavaScript. Quel est le type de variable JavaScript
+          obtenue ?
+        </h3>
+        <pre>
+          ajax.onreadystatechange = function() {
+            if (ajax.readyState === 4 && ajax.status === 200) {
+                //console.log(ajax.responseText);
+                const response = JSON.parse(ajax.responseText);
+                console.log(typeof response);
+                console.log(response);
+            }
+        }
+        </pre>
+        Pour transformer la chaine de caractère stockée dans
+        <code>reponseText</code> en objet JavaScript, on utilise la fonction
+        <code>JSON.parse()</code> qui retourne un objet JavaScript tout frais.
+        <br />
+        Le type de variable JavaScript obtenue est <code>object</code> obtenue
+        grâce à la fonction <code>typeof</code>
+      </li>
+      <li>
+        <h3>
+          Affichez, dans la console, un tableau contenant les noms des champs
+          stockés dans votre objet JSON. Note : Quelle fonction permet de créer
+          un tel tableau ?
+        </h3>
+        <pre>
+          ajax.onreadystatechange = function() {
+            if (ajax.readyState === 4 && ajax.status === 200) {
+                //console.log(ajax.responseText);
+                const response = JSON.parse(ajax.responseText);
+                console.log(typeof response);
+                console.log(response);
+                const arrays_keys = Object.keys(response);
+                console.log(arrays_keys)
+            }
+        }
+        </pre>
+        Pour afficher un tableau contenant tous les champs stockés dans l'objet
+        JSON, on définit une variable <code>arrays_keys</code> qui contiendra le
+        résultat de la fonction <code>Object.keys(response)</code>
+      </li>
+      <li>
+        <h3>
+          Actuellement, le document exo1.html contient une table HTML. À l'aide de JavaScript, récupérez l'élément HTML correspondant à cette table, puis modifiez la table pour faire en sorte qu'elle contienne une ligne par fruit et deux colonnes : la première colonne contiendra le nom du fruit, et l'autre la quantité du fruit. <br>
+          Note : Vous devez modifier votre élément HTML uniquement à l'aide de votre code Javascript, et certainement pas en réécrivant à la main des portions du document exo1.html. <br>
+        </h3>
+      </li>
+    </ol>
+  </body>
+</html>
