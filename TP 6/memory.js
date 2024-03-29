@@ -16,24 +16,28 @@ class MemoryGame {
       compteur++;
       div.appendChild(img);
       img.onclick = () => {
-        if (this.selectedCards.length < 2 && (this.alreadySelected.indexOf(img.id) === -1)) {
+        console.log(`selected : ${this.selectedCards}`);
+        console.log(`already : ${this.alreadySelected}`);
+
+        if (this.selectedCards.length === 0 && !this.alreadySelected.includes(img) && !this.selectedCards.includes(img)) {
           this.selectedCards.push(img);
-          img.src = `ressources/${this.images[element]}`;
-        }
-        if (this.selectedCards.length === 2 && this.alreadySelected.indexOf(img.id) === -1) {
+          this.selectedCards[0].src = `ressources/${this.images[element]}`;
+        } 
+
+        else if (this.selectedCards.length === 1 && !this.alreadySelected.includes(img) && !this.selectedCards.includes(img)) {
+          this.selectedCards.push(img);
+          this.selectedCards[1].src = `ressources/${this.images[element]}`;
           if (this.selectedCards[0].src === this.selectedCards[1].src) {
-            this.alreadySelected.push(this.selectedCards[0].id);
-            this.alreadySelected.push(this.selectedCards[1].id);
+            this.alreadySelected.push(this.selectedCards[0]);
+            this.alreadySelected.push(this.selectedCards[1]);
             this.selectedCards = [];
-          }
+          } 
           else {
             this.selectedCards[0].src = "ressources/blank.png";
             this.selectedCards[1].src = "ressources/blank.png";
+            this.selectedCards = [];
           }
-        }
-        // img.src = `ressources/${this.images[element]}`;
-        // console.log("id:", img.id);
-        // console.log("numéro de la carte:", element);
+        } 
       };
     });
   }
