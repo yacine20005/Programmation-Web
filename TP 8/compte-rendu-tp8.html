@@ -59,8 +59,6 @@
         <br />
         Pour ensuite envoyer la requête au serveur avec
         <code>ajax.send();</code> <br />
-        <b>A VERIFIER</b> : Pour savoir si la requête a réussi ou échoué, on a
-        utilisé la fonction <code>ajax.onreadystatechange</code> <br />
         On peut aussi accéder au panel <i>Réseau</i> du navigateur pour bien
         vérifier si le fruitQuantities.json est bien présent
       </li>
@@ -157,9 +155,219 @@
       </li>
       <li>
         <h3>
-          Actuellement, le document exo1.html contient une table HTML. À l'aide de JavaScript, récupérez l'élément HTML correspondant à cette table, puis modifiez la table pour faire en sorte qu'elle contienne une ligne par fruit et deux colonnes : la première colonne contiendra le nom du fruit, et l'autre la quantité du fruit. <br>
-          Note : Vous devez modifier votre élément HTML uniquement à l'aide de votre code Javascript, et certainement pas en réécrivant à la main des portions du document exo1.html. <br>
+          Actuellement, le document exo1.html contient une table HTML. À l'aide
+          de JavaScript, récupérez l'élément HTML correspondant à cette table,
+          puis modifiez la table pour faire en sorte qu'elle contienne une ligne
+          par fruit et deux colonnes : la première colonne contiendra le nom du
+          fruit, et l'autre la quantité du fruit. <br />
+          Note : Vous devez modifier votre élément HTML uniquement à l'aide de
+          votre code Javascript, et certainement pas en réécrivant à la main des
+          portions du document exo1.html. <br />
         </h3>
+        <pre>
+          const create_tab = function (arrays_keys, arrays_values) {
+            const tab = document.getElementById("basket");
+            const tr = document.createElement("tr");
+            const fruit = document.createElement("th");
+            const quantity = document.createElement("th");
+
+            fruit.textContent = "Fruit";
+            quantity.textContent = "Quantity";
+
+            tr.appendChild(fruit);
+            tr.appendChild(quantity);
+            tab.appendChild(tr);
+          
+            for (let i = 0; i < arrays_keys.length; i++) {
+              const tr = document.createElement("tr");
+              const keys = document.createElement("td");
+              const values = document.createElement("td");
+             
+              keys.textContent = arrays_keys[i];
+              values.textContent = arrays_values[i];
+              
+              tr.appendChild(keys);
+              tr.appendChild(values);
+              tab.appendChild(tr);
+            }
+          };
+        </pre>
+        On a récupéré les clés et les valeurs de l'objet JSON dans des tableaux
+        <code>arrays_keys</code> et <code>arrays_values</code> afin de pouvoir
+        les utiliser pour créer les lignes de la table. On a ensuite créé une
+        fonction <code>create_tab</code> qui prend en paramètre les deux
+        tableaux et qui va prendre les éléments de ces tableaux pour les ajouter
+        à la table HTML à l'aide de l'index <code>i</code> pour parcourir les
+        deux tableaux en même temps.
+      </li>
+      <li>
+        <h3>
+          Faire en sorte que le span quantity de la page HTML soit mis à jour
+          avec la somme des quantités de tous les fruits.
+        </h3>
+        <pre>
+          const modify_quantity = function (arrays_values) {
+            const quantity = document.getElementById("quantity");
+            let total = 0
+            for (let i of arrays_values) {
+                total += i
+            }
+            console.log(total)
+            quantity.textContent = total;
+        }
+        </pre>
+        La fonction <code>modify_quantity</code> prend en paramètre le tableau
+        contenant l'ensemble des valeurs d'<code>arrays_values</code> pour
+        calculer la somme de ces valeurs et mettre à jour le span
+        <code>quantity</code> avec cette somme.
+      </li>
+    </ol>
+    <h2>Exercice 2 : Combien ça coûte ?</h2>
+    <ol>
+      <li>
+        <h3>
+          Recopiez la page Web exo2.html dans votre répertoire tp8 puis recopiez
+          votre fichier basket.js dans le fichier basket2.js.
+        </h3>
+        C'est fait !
+      </li>
+      <li>
+        <h3>
+          Le prix d'une orange est 10 euros, le prix d'une banane est 35 euros
+          et le prix d'une poire est 5 euros. On veut écrire ces prix dans le
+          fichier prices.json, quelle structure de données utiliser ?
+        </h3>
+        On peut utiliser la structure objet JSON pour stocker les prix des
+        différents fruits.
+      </li>
+      <li>
+        <h3>
+          Écrivez le fichier prices.json contenant ces informations de prix.
+          Vérifiez que votre fichier respecte bien le format JSON en utilisant
+          le validateur de JSON http://jsonlint.com/.
+        </h3>
+        <pre>
+          {
+            "orange": 10,
+            "banane": 35,
+            "poire": 5
+          }
+        </pre>
+        C'est fait et le fichier est bien valide.
+      </li>
+      <li>
+        <h3>
+          Faites en sorte que le fichier prices.json soit chargé par une requête
+          AJAX. <br />
+          Note 1 : sachant que l'on charge déjà le fichier fruitQuantities.json
+          avec une requête AJAX, c'est mieux s'il n'y a qu'un seul code de
+          chargement de requête AJAX. Pour ce faire, écrivez une fonction
+          effectuant ces requêtes, dont les deux arguments seront un tableau
+          d'URLs des ressources que l'on veut charger et la fonction que l'on
+          souhaitera appeler au moment où ces ressources auront été chargées.
+          <br />
+          Note 2 : Comme l'on exécute plusieurs requêtes, il faut bien être sûr
+          qu'elles soient toutes terminées avant d'exécuter la fonction finale.
+          <br />
+          Note 3 : Mais ce n'est pas une raison pour attendre qu'une requête
+          soit finie pour lancer l'autre, ce qui serait inefficace. <br />
+        </h3>
+        <pre>
+          function handleAJAX(array_url) {
+            for (let i = 0; i < array_url.length; i++) {
+              const ajax = new XMLHttpRequest();
+              ajax.open("GET", array_url[i], true);
+              ajax.onreadystatechange = function () {
+                if (ajax.readyState === 4 && ajax.status === 200) {
+                  handleResponse(ajax.responseText, i);
+                }
+              };
+              ajax.send();
+            }
+          };
+          
+          function handleresponse(response, index) {
+            array_response[index] = JSON.parse(response);
+            success += 1;
+          
+            if (success === array_url.length) {
+                console.log(array_response);
+                const arrays_keys = Object.keys(array_response[1]);
+                const arrays_values = Object.values(array_response[1]);
+                create_tab(arrays_keys, arrays_values);
+                modify_quantity(arrays_values);
+            }
+          };
+        </pre>
+        Afin de charger les deux fichiers <code>JSON</code>, on a créé une
+        fonction <code>handleAJAX</code> qui va prendre en paramètre un tableau
+        d'URLs des ressources à charger et une fonction
+        <code>handleResponse</code> qui va prendre en paramètre la réponse de la
+        requête <code>AJAX</code> et l'index de l'<code>URL</code> dans le
+        tableau. <br />
+        On a bien respecter les notes 2 et 3 en vérifiant si toutes les requêtes
+        sont terminées avant d'exécuter la fonction finale et en ne bloquant pas
+        les requêtes. <br />
+        On a ensuite créé un tableau <code>array_response</code> qui va contenir
+        les réponses des requêtes <code>AJAX</code> parsées en objet
+        <code>Js</code>. <br />
+        On a aussi créé une variable <code>success</code> qui va compter le
+        nombre de requêtes terminées. <br />
+      </li>
+      <li>
+        <h3>
+          Faites en sorte de calculer le prix du panier et de mettre à jour la
+          page Web avec le prix.
+        </h3>
+        <pre>
+          function modify_price(array_response) {
+            const page_price = document.getElementById("price");
+            const prices = array_response[0];
+            const fruitQuantities = array_response[1];
+            let total = 0;
+            for (let fruit in fruitQuantities) {
+              if (Object.hasOwn(prices, fruit)) {
+                total += fruitQuantities[fruit] * prices[fruit];
+              }
+            }
+            page_price.textContent = total;
+          }
+        </pre>
+        La fonction <code>modify_price</code> prend en paramètre le tableau
+        <code>array_response</code> qui contient les deux objets
+        <code>JSON</code> parsés. <br />
+        On récupère les prix des fruits et les quantités des fruits pour
+        calculer le prix total du panier. <br />
+        En vérifiant si le fruit dans le tableau des quantité est bien présent
+        dans le tableau des prix. <br />
+      </li>
+    </ol>
+    <h2>Exercice 3 : Les promesses n'engagent que ceux qui y croient</h2>
+    <ol>
+      <li>
+        <h3>
+          Recopiez la page Web exo3.html dans votre répertoire tp8 puis recopiez
+          votre fichier basket2.js dans le fichier basket3.js.
+        </h3>
+      </li>
+      C'est fait !
+      <li>
+        <h3>
+          Récupérer l'objet contenu dans le fichier prices.json sans créer de
+          requête AJAX à la main, mais en s'aidant de la fonction fetch et de
+          promesses.
+        </h3>
+        <pre>
+          fetch('prices.json')
+            .then(response => {
+              if (!response.ok) {
+                 throw new Error('Erreur HTTP ! statut : ' + response.status);
+              }
+              return response.json();
+            })
+            .then(data => {console.log(data)})
+            .catch(error => console.log('Une erreur est survenue : ' + error));
+        </pre>
       </li>
     </ol>
   </body>

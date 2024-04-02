@@ -1,53 +1,61 @@
 "use strict";
-// TODO
-window.onload = function() {
- };
+window.onload = function () {};
 const ajax = new XMLHttpRequest();
 /*ajax.onreadystatechange = function() {
     console.log(ajax.readyState + ':' + ajax.status + ':' + ajax.responseText);
  }*/
-ajax.onreadystatechange = function() {
-    if (ajax.readyState === 4 && ajax.status === 200) {
-        //console.log(ajax.responseText);
-        const response = JSON.parse(ajax.responseText);
-        console.log(typeof response);
-        console.log(response);
-        const arrays_keys = Object.keys(response);
-        console.log(arrays_keys)
-        return arrays_keys;
-    }
-}
+ajax.onreadystatechange = function () {
+  if (ajax.readyState === 4 && ajax.status === 200) {
+    console.log(ajax.responseText);
+    const response = JSON.parse(ajax.responseText);
+    console.log(typeof response);
+    console.log(response);
+    const arrays_keys = Object.keys(response);
+    const arrays_values = Object.values(response);
+    console.log(arrays_keys);
+    console.log(arrays_values);
+    create_tab(arrays_keys, arrays_values);
+    modify_quantity(arrays_values)
+    return arrays_keys, arrays_values;
+  }
+};
 //ajax.open("GET", "https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td08/fruitQuantities.json", true);
-ajax.open("GET", "fruitQuantities.json", true)
+ajax.open("GET", "fruitQuantities.json", true);
 ajax.send();
 
-const create_tab = function(arrays_keys) {
-    const tab = document.getElementById('basket');
-    const tr = document.createElement('tr');
+function create_tab(arrays_keys, arrays_values) {
+  const tab = document.getElementById("basket");
+  const tr = document.createElement("tr");
+  const fruit = document.createElement("th");
+  const quantity = document.createElement("th");
 
-    const th1 = document.createElement('th');
-    th1.textContent = 'Fruit';
-    tr.appendChild(th1);
+  fruit.textContent = "Fruit";
+  quantity.textContent = "Quantity";
 
-    const th2 = document.createElement('th');
-    th2.textContent = 'Quantity';
-    tr.appendChild(th2);
+  tr.appendChild(fruit);
+  tr.appendChild(quantity);
+  tab.appendChild(tr);
 
+  for (let i = 0; i < arrays_keys.length; i++) {
+    const tr = document.createElement("tr");
+    const keys = document.createElement("td");
+    const values = document.createElement("td");
+
+    keys.textContent = arrays_keys[i];
+    values.textContent = arrays_values[i];
+
+    tr.appendChild(keys);
+    tr.appendChild(values);
     tab.appendChild(tr);
+  }
+};
 
-    for (let i = 0; i < arrays_keys.length; i++) {
-        const tr = document.createElement('tr');
-
-        const td1 = document.createElement('td');
-        td1.textContent = arrays_keys[i];
-        tr.appendChild(td1);
-
-        const td2 = document.createElement('td');
-        td2.textContent = arrays_keys[i];
-        tr.appendChild(td2);
-        
-        tab.appendChild(tr);
+function modify_quantity(arrays_values) {
+    const quantity = document.getElementById("quantity");
+    let total = 0
+    for (let i of arrays_values) {
+        total += i
     }
+    console.log(total)
+    quantity.textContent = total;
 }
-
-create_tab(['orange', 'banana', 'pear'])
