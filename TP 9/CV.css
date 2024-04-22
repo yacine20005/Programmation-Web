@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.tete {
+    background-color: grey;
+}
+
+.titre1 {
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.titre2 {
+    font-size: 2vw;
+}
+
+.titre3 {
+    font-size: 1.5vw;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.col-1 {width: 16.66%; float: left; padding: 15px; }
+.col-2 {width: 33.33%; float: left; padding: 15px}
+.col-3 {width: 50%; float: left; padding: 15px}
+.col-4 {width: 66.66%; float: left; padding: 15px}
+.col-5 {width: 83.33%; float: left; padding: 15px}
+.col-6 {width: 100%; float: left; padding: 15px}
+
+
+div {
+    border: 1px solid black;
+}
