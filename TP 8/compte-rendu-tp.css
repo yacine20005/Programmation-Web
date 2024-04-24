@@ -1,73 +1,72 @@
 body {
-    color: white;
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    background-color: black;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-color: black;
 }
 
 h1 {
-    font-size: 24pt;
+  font-size: 24pt;
 }
 
 h2 {
-    font-size: 18pt;
-    color: crimson; 
+  font-size: 18pt;
+  color: crimson;
 }
 
 h3 {
-    font-size: 16pt;
+  font-size: 16pt;
 }
 
 .centered {
-    text-align: center;
+  text-align: center;
 }
 
 .right {
-    text-align: right;
+  text-align: right;
 }
 
 a:link,
 a:visited {
-    color: red;
+  color: red;
 }
 
 a:hover,
 a:active {
-    color: rgb(0, 128, 128);
+  color: rgb(0, 128, 128);
 }
 
 table {
-    border: 1px solid white;
-    border-collapse: collapse;
-    width: 100%;
+  border: 1px solid white;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 td,
 th {
-    border: 1px solid white;
-    padding: 8px;
-
+  border: 1px solid white;
+  padding: 8px;
 }
 
 th {
-    text-align: center;
-    font-variant: small-caps ;
+  text-align: center;
+  font-variant: small-caps;
 }
 
 tr:nth-child(even) {
-    background-color: rgb(80%, 80%, 90%);
+  background-color: rgb(80%, 80%, 90%);
 }
 
 tr:hover {
-    background-color:#1c780c;
+  background-color: #1c780c;
 }
 
 ol li {
-    list-style-type: lower-roman;
+  list-style-type: lower-roman;
 }
 
 ul li {
-    list-style-type: disc;
+  list-style-type: disc;
 }

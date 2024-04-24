@@ -88,7 +88,7 @@ function modify_quantity(arrays_values) {
   quantity.textContent = total;
 }
 
-function modify_price_older(array_response) {
+function modify_priceer(array_response) {
   const page_price = document.getElementById("price");
   const prices = Object.entries(array_response[0]);
   const fruitQuantities = Object.entries(array_response[1]);
@@ -103,7 +103,7 @@ function modify_price_older(array_response) {
   page_price.textContent = total;
 }
 
-function modify_price_old(array_response) {
+function modify_price(array_response) {
   const page_price = document.getElementById("price");
   const prices = array_response[0];
   const fruitQuantities = array_response[1];
@@ -121,12 +121,15 @@ let array_response = [];
 let success = 0;
 handleAJAX(array_url);
 
-fetch('prices.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erreur HTTP ! statut : ' + response.status);
-        }
-        return response.json();
-    })
-    .then(data => {console.log(data)})
-    .catch(error => console.log('Une erreur est survenue : ' + error));
+fetch("prices.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Erreur HTTP ! statut : " + response.status);
+    }
+    return response.json();
+  })
+  .then((prices) => {
+    array_response.push(prices);
+    modify_price(array_response);
+  })
+  .catch((error) => console.log("Une erreur est survenue : " + error));

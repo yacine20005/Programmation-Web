@@ -15,7 +15,7 @@ ajax.onreadystatechange = function () {
     console.log(arrays_keys);
     console.log(arrays_values);
     create_tab(arrays_keys, arrays_values);
-    modify_quantity(arrays_values)
+    modify_quantity(arrays_values);
     return arrays_keys, arrays_values;
   }
 };
@@ -48,14 +48,14 @@ function create_tab(arrays_keys, arrays_values) {
     tr.appendChild(values);
     tab.appendChild(tr);
   }
-};
+}
 
 function modify_quantity(arrays_values) {
-    const quantity = document.getElementById("quantity");
-    let total = 0
-    for (let i of arrays_values) {
-        total += i
-    }
-    console.log(total)
-    quantity.textContent = total;
+  const quantity = document.getElementById("quantity");
+  let total = 0;
+  for (let i of arrays_values) {
+    total += i;
+  }
+  console.log(total);
+  quantity.textContent = total;
 }

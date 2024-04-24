@@ -49,8 +49,8 @@
         </pre>
         Pour créer l'objet XMLHttpRequest, on a utilisé
         <code>const ajax = new XMLHttpRequest();</code> <br />
-        On a ensuite défini une requête sur fruitQuantities.json en utilisant
-        l'url avec
+        On a ensuite défini une requête sur <code>fruitQuantities.json</code> en
+        utilisant l'url avec
         <code
           >ajax.open("GET",
           "https://monge.univ-mlv.fr/~demesma/ProgWeb20232024/Notes/progweb/td/src/td08/fruitQuantities.json",
@@ -60,7 +60,7 @@
         Pour ensuite envoyer la requête au serveur avec
         <code>ajax.send();</code> <br />
         On peut aussi accéder au panel <i>Réseau</i> du navigateur pour bien
-        vérifier si le fruitQuantities.json est bien présent
+        vérifier si le fichier est bien présent
       </li>
       <li>
         <h3>
@@ -103,10 +103,11 @@
         };
         </pre>
         On peut accéder à chaque changement d'état de la requête en utilisant la
-        fonction <code>ajax.onreadystatechange</code> Ensuite on vérifie si la
-        requêt est bien terminée et si le status est 200 qui veut dire que
-        l'opération est un succès pour afficher le résultat
-        <code>ajax.responseText</code> dans la console.
+        fonction <code>ajax.onreadystatechange</code> <br />
+        Ensuite on vérifie si la requête est bien terminée et si le
+        <code>status</code> est 200 qui veut dire que l'opération est un succès
+        pour afficher le résultat <code>ajax.responseText</code> dans la
+        console.
       </li>
       <li>
         <h3>
@@ -128,8 +129,8 @@
         <code>reponseText</code> en objet JavaScript, on utilise la fonction
         <code>JSON.parse()</code> qui retourne un objet JavaScript tout frais.
         <br />
-        Le type de variable JavaScript obtenue est <code>object</code> obtenue
-        grâce à la fonction <code>typeof</code>
+        On sait que le type de variable JavaScript obtenue est
+        <code>object</code> grâce à la fonction <code>typeof</code>
       </li>
       <li>
         <h3>
@@ -194,11 +195,11 @@
         </pre>
         On a récupéré les clés et les valeurs de l'objet JSON dans des tableaux
         <code>arrays_keys</code> et <code>arrays_values</code> afin de pouvoir
-        les utiliser pour créer les lignes de la table. On a ensuite créé une
-        fonction <code>create_tab</code> qui prend en paramètre les deux
-        tableaux et qui va prendre les éléments de ces tableaux pour les ajouter
-        à la table HTML à l'aide de l'index <code>i</code> pour parcourir les
-        deux tableaux en même temps.
+        les utiliser pour créer les lignes de la table. <br />
+        On a ensuite créé une fonction <code>create_tab</code> qui prend en
+        paramètre les deux tableaux et qui va prendre les éléments de ces
+        tableaux pour les ajouter à la table HTML à l'aide de l'index
+        <code>i</code> pour parcourir les deux tableaux en même temps.
       </li>
       <li>
         <h3>
@@ -349,8 +350,8 @@
           Recopiez la page Web exo3.html dans votre répertoire tp8 puis recopiez
           votre fichier basket2.js dans le fichier basket3.js.
         </h3>
+        C'est fait !
       </li>
-      C'est fait !
       <li>
         <h3>
           Récupérer l'objet contenu dans le fichier prices.json sans créer de
@@ -368,6 +369,34 @@
             .then(data => {console.log(data)})
             .catch(error => console.log('Une erreur est survenue : ' + error));
         </pre>
+        On a utilisé la fonction <code>fetch</code> pour récupérer le contenu du
+        fichier <code>prices.json</code> et on a ensuite utilisé les promesses
+        pour gérer les réponses et les erreurs éventuelles. <br />
+      </li>
+      <li>
+        <h3>
+          Faites en sorte de calculer le prix du panier et de mettre à jour la
+          page Web avec le prix, mais en utilisant la fonction fetch et des
+          promesses.
+        </h3>
+        <pre>
+          fetch("prices.json")
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Erreur HTTP ! statut : " + response.status);
+              }
+              return response.json();
+            })
+            .then((prices) => {
+              array_response.push(prices);
+              modify_price(array_response);
+            })
+            .catch((error) => console.log("Une erreur est survenue : " + error));
+        </pre>
+        Il suffit juste d'ajouter une nouvelle promesse pour récupérer
+        <code>prices</code> et de le stocker dans le tableau
+        <code>array_response</code> pour ensuite appeler la fonction
+        <code>modify_price</code> pour mettre à jour le prix du panier.
       </li>
     </ol>
   </body>
