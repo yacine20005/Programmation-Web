@@ -6,6 +6,8 @@
     .col-5 {width: 83.33%; float: left; padding: 15px}
     .col-6 {width: 100%; float: left; padding: 15px}
     .titre1 {font-weight: bold;}
+    .drapeau img {width: 0,5vw;}
+    * {background-color: grey;}
 }
 
 * {
@@ -14,12 +16,12 @@
     font-size: 1.5vw;
 }
 
-img {
-    width: 100%;
-}
-
 div {
     border: 1px solid black;
+}
+
+img {
+    width: 100%;
 }
 
 .tete {
