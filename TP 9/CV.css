@@ -46,7 +46,7 @@
 * {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 img {
@@ -58,7 +58,7 @@ div {
 }
 
 .drapeau img {
-  width: 1vw%;
+  width: 1vw;
 }
 
 .tete {
@@ -66,15 +66,15 @@ div {
 }
 
 .titre1 {
-  font-size: 3vw;
-}
-
-.titre2 {
   font-size: 2vw;
 }
 
+.titre2 {
+  font-size: 1vw;
+}
+
 .titre3 {
-  font-size: 1.8vw;
+  font-size: 1.5vw;
 }
 
 .row::after {
