@@ -1,51 +1,90 @@
 @media only screen and (min-width: 600px) {
-    .col-1 {width: 16.66%; float: left; padding: 15px; }
-    .col-2 {width: 33.33%; float: left; padding: 15px}
-    .col-3 {width: 50%; float: left; padding: 15px}
-    .col-4 {width: 66.66%; float: left; padding: 15px}
-    .col-5 {width: 83.33%; float: left; padding: 15px}
-    .col-6 {width: 100%; float: left; padding: 15px}
-    .titre1 {font-weight: bold;}
-    .drapeau img {width: 0,5vw;}
-    * {background-color: grey;}
+  .col-1 {
+    width: 16.66%;
+    float: left;
+    padding: 15px;
+    border: 1px solid black;
+  }
+  .col-2 {
+    width: 33.33%;
+    float: left;
+    padding: 15px;
+    border: 1px solid black;
+  }
+  .col-3 {
+    width: 50%;
+    float: left;
+    padding: 15px;
+    border: 1px solid black;
+  }
+  .col-4 {
+    width: 66.66%;
+    float: left;
+    padding: 15px;
+    border: 1px solid black;
+  }
+  .col-5 {
+    width: 83.33%;
+    float: left;
+    padding: 15px;
+    border: 1px solid black;
+  }
+  .col-6 {
+    width: 100%;
+    float: left;
+    padding: 15px;
+    border: 1px solid black;
+  }
+  .titre1 {
+    font-weight: bold;
+  }
+  img {
+    width: 100%;
+  }
 }
 
 * {
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    font-size: 1.5vw;
-}
-
-div {
-    border: 1px solid black;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5vw;
 }
 
 img {
-    width: 100%;
+  width: 100%;
+}
+
+div {
+  border: 1px solid black;
+}
+
+.drapeau img {
+  width: 1vw%;
 }
 
 .tete {
-    background-color: grey;
+  background-color: grey;
 }
 
 .titre1 {
-    font-size: 3vw;
+  font-size: 3vw;
 }
 
 .titre2 {
-    font-size: 2vw;
+  font-size: 2vw;
 }
 
 .titre3 {
-    font-size: 1.8vw;
+  font-size: 1.8vw;
 }
 
 .row::after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .photo {
-    width: 16.66%; float: left; padding: 0;
+  width: 16.66%;
+  float: left;
+  padding: 0;
 }
